@@ -46,6 +46,10 @@ div.column-icon.collapsable + div {
 /* 半透明デザイン */
 
 body {
+  &.no-reduce-motion {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+
   &.app-body {
     background: url($wallpaper) no-repeat fixed center top;
   }
@@ -85,8 +89,6 @@ body {
     -webkit-background-size: cover;
   }
 }
-
-
 
 .focusable {
   &:focus {
@@ -203,6 +205,12 @@ body {
   background: rgba(lighten($ui-base-color, 2%), 0.7);
 }
 
+.no-reduce-motion {
+  .container-alt {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+}
+
 .landing-page {
   p,
   li {
@@ -310,7 +318,9 @@ body {
     }
   }
 
-
+  .container-alt {
+    background: transparent;
+  }
 }
 
 .table {
@@ -343,5 +353,3 @@ body {
     background: rgba($ui-base-color, 0.75);
   }
 }
-
-
