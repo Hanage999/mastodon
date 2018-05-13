@@ -205,10 +205,8 @@ body {
   background: rgba(lighten($ui-base-color, 2%), 0.7);
 }
 
-.no-reduce-motion {
-  .container-alt {
-    background: rgba(darken($ui-base-color, 15%), 0.7);
-  }
+.input.required {
+  background: rgba(darken($ui-base-color, 15%), 0.5);
 }
 
 .landing-page {
