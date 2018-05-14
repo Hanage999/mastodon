@@ -47,27 +47,27 @@ div.column-icon.collapsable + div {
 
 body {
   &.no-reduce-motion {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   &.app-body {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   &.about-body {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   &.tag-body {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   &.admin {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   &.error {
-    background: url($wallpaper) no-repeat fixed center top;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 }
 
