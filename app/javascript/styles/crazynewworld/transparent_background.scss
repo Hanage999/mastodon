@@ -1,3 +1,5 @@
+/* 半透明デザイン */
+
 ::-webkit-scrollbar-thumb {
   background: lighten($ui-base-color, 20%);
 }
@@ -9,41 +11,6 @@
 ::-webkit-scrollbar-thumb:active {
   background: lighten($ui-base-color, 20%);
 }
-
-/* 3ペイン化 */
-
-@media screen and (min-width:741px) {
-    
-.drawer {
-    width: 30% !important;
-    height: 470px !important;
-    overflow: visible !important;
-}
-
-.column {
-    flex: auto !important;
-}
-
-.column:nth-child(3) {
-    position: fixed !important;
-    margin-top: 460px !important;
-    padding-left: 10px !important;
-    height: calc(100% - 460px) !important;
-    left: 0px !important;
-    width: 30% !important;
-}
-
-.column:nth-child(3) + div .mastodon-column-container {
-    height: auto !important;
-}
-
-div.column-icon.collapsable + div {
-    overflow: scroll !important;
-}
-
-}
-
-/* 半透明デザイン */
 
 body {
   &.no-reduce-motion {
@@ -349,5 +316,22 @@ body {
 
   .content-wrapper {
     background: rgba($ui-base-color, 0.75);
+  }
+
+  .dashboard__counters {
+    div {
+      a {
+        background: rgba(darken($ui-base-color, 4%), 0.85);
+      }
+      div {
+        background: rgba(darken($ui-base-color, 4%), 0.85);
+      }
+    }
+  }
+
+  .content {
+    h4 {
+      border-bottom: 1px solid $darker-text-color;
+    }
   }
 }
