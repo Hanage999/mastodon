@@ -1,0 +1,33 @@
+/* 3ペイン化 */
+
+@media screen and (min-width:741px) {
+    
+  .drawer {
+      width: 30% !important;
+      height: 470px !important;
+      overflow: visible !important;
+  }
+
+  .column {
+      flex: auto !important;
+  }
+
+  .column:nth-child(3) {
+      position: fixed !important;
+      margin-top: 460px !important;
+      padding-left: 10px !important;
+      height: calc(100% - 460px) !important;
+      left: 0px !important;
+      width: 30% !important;
+  }
+
+  .column:nth-child(3) + div .mastodon-column-container {
+      height: auto !important;
+  }
+
+  div.column-icon.collapsable + div {
+      overflow: scroll !important;
+  }
+
+}
+
