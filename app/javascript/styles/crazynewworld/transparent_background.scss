@@ -76,9 +76,26 @@ body {
 
 .account__header {
   background: rgba(lighten($ui-base-color, 4%), 0.6);
+  background-size: cover;
+
   & > div {
     background: rgba(lighten($ui-base-color, 4%), 0.6);
+    background-size: cover;
   }
+
+  .account__header__fields {
+    dt {
+      background: rgba(darken($ui-base-color, 15%), 0.7);
+    }
+
+    dd {
+      background-color: rgba(darken($ui-base-color, 15%), 0.4);
+    }
+  }
+}
+
+.account__section-headline {
+  background: rgba(darken($ui-base-color, 8%), 0.8);
 }
 
 .column {
@@ -332,6 +349,58 @@ body {
   .content {
     h4 {
       border-bottom: 1px solid $darker-text-color;
+    }
+  }
+}
+
+/* publicページ */
+
+.public-layout {
+  .public-account-header__bar::before {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  .account__section-headline {
+    background-color: rgba(darken($ui-base-color, 15%), 0.85);
+  }
+
+  .public-account-bio {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  .header {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  .footer {
+    .grid {
+      background-color: rgba(darken($ui-base-color, 15%), 0.7);
+      padding: 10px;
+      border-radius: 4px;
+    }
+  }
+}
+
+.activity-stream {
+  .entry {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+}
+
+.hero-widget__text {
+  background-color: rgba(darken($ui-base-color, 15%), 0.8);
+}
+
+.account__header__fields {
+  dt {
+    background: rgba(darken($ui-base-color, 8%), 0.8);
+  }
+}
+
+@media screen and (max-width:600px) {
+  .public-layout {
+    .public-account-header__bar {
+      background-color: rgba(darken($ui-base-color, 15%), 0.7);
     }
   }
 }
