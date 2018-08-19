@@ -397,6 +397,20 @@ body {
   }
 }
 
+.endorsements-widget {
+  background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  border-radius: 4px;
+
+  h4 {
+    background-color: rgba(darken($ui-base-color, 15%), 0.85);
+    border-radius: 4px 4px 0 0;
+  }
+}
+
+.card__bar {
+  background-color: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
 @media screen and (max-width:600px) {
   .public-layout {
     .public-account-header__bar {
