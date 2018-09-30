@@ -331,6 +331,12 @@ body {
     }
   }
 
+  .content {
+    h2, h4, hr {
+      border-bottom: 1px solid $darker-text-color;
+    }
+  }
+                    
   .content-wrapper {
     background: rgba($ui-base-color, 0.75);
   }
@@ -343,12 +349,6 @@ body {
       div {
         background: rgba(darken($ui-base-color, 4%), 0.85);
       }
-    }
-  }
-
-  .content {
-    h4 {
-      border-bottom: 1px solid $darker-text-color;
     }
   }
 }
