@@ -26,7 +26,8 @@ Rails.application.config.content_security_policy do |p|
   p.media_src       :self, :https, :data, assets_host
   p.frame_src       :self, :https
   p.manifest_src    :self, assets_host
-
+  p.report_uri      'https://mastodon.crazynewworld.net/cspcheck/wtf'
+  
   if Rails.env.development?
     webpacker_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{Webpacker.dev_server.host_with_port}" }
 
