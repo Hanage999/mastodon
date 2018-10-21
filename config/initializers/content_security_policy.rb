@@ -31,6 +31,8 @@ Rails.application.config.content_security_policy do |p|
   p.child_src  :self, :blob, assets_host
   p.worker_src :self, :blob, assets_host
 
+  p.report_uri      'https://mastodon.crazynewworld.net/cspcheck/wtf'
+
   if Rails.env.development?
     webpacker_public_host = ENV.fetch('WEBPACKER_DEV_SERVER_PUBLIC', Webpacker.config.dev_server[:public])
     front_end_build_urls = %w(ws http).map { |protocol| "#{protocol}#{Webpacker.dev_server.https? ? 's' : ''}://#{webpacker_public_host}" }
