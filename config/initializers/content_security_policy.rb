@@ -30,6 +30,8 @@ Rails.application.config.content_security_policy do |p|
   p.child_src  :self, :blob, assets_host
   p.worker_src :self, :blob, assets_host
 
+  p.report_uri 'https://mastodon.crazynewworld.net/cspcheck/wtf'
+
   p.connect_src :self, :data, :blob, *media_hosts, Rails.configuration.x.streaming_api_base_url
   p.script_src  :self, assets_host, "'wasm-unsafe-eval'"
   p.frame_src   :self, :https
