@@ -66,6 +66,10 @@ body {
   }
 }
 
+.status-card {
+  background: rgba(darken($ui-base-color, 15%), 0.3);
+}
+
 .detailed-status {
   background: rgba(lighten($ui-base-color, 4%), 0.3);
 }
@@ -259,7 +263,7 @@ body {
   .footer-links {
     background: rgba(darken($ui-base-color, 15%), 0.8);
   }
-
+  
   @media screen and (max-width: 675px) {
     .header {
       .links {
