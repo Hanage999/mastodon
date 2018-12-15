@@ -1,1 +1,13 @@
 default: styles/application.scss
+mastodon-green: styles/mastodon-green.scss
+mastodon-blue: styles/mastodon-blue.scss
+green: styles/green.scss
+blue: styles/blue.scss
+sakura: styles/sakura.scss
+shouwa: styles/shouwa.scss
+tricolor: styles/tricolor.scss
+green-dark: styles/green-dark.scss
+blue-dark: styles/blue-dark.scss
+sakura-dark: styles/sakura-dark.scss
+shouwa-dark: styles/shouwa-dark.scss
+tricolor-dark: styles/tricolor-dark.scss
