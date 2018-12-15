@@ -1,0 +1,347 @@
+::-webkit-scrollbar-thumb {
+  background: lighten($ui-base-color, 20%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: lighten($ui-base-color, 28%);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: lighten($ui-base-color, 20%);
+}
+
+/* 3ペイン化 */
+
+@media screen and (min-width:741px) {
+    
+.drawer {
+    width: 30% !important;
+    height: 470px !important;
+    overflow: visible !important;
+}
+
+.column {
+    flex: auto !important;
+}
+
+.column:nth-child(3) {
+    position: fixed !important;
+    margin-top: 460px !important;
+    padding-left: 10px !important;
+    height: calc(100% - 460px) !important;
+    left: 0px !important;
+    width: 30% !important;
+}
+
+.column:nth-child(3) + div .mastodon-column-container {
+    height: auto !important;
+}
+
+div.column-icon.collapsable + div {
+    overflow: scroll !important;
+}
+
+}
+
+/* 半透明デザイン */
+
+body {
+  &.app-body {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+
+  &.about-body {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+
+  &.tag-body {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+
+  &.admin {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+
+  &.error {
+    background: url($wallpaper) no-repeat fixed center top;
+  }
+}
+
+@media screen and (max-width:740px) {
+  body.about-body {
+    background:none;
+  }
+
+  body.about-body::before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: url($wallpaper) center/cover no-repeat;
+    -webkit-background-size: cover;
+  }
+}
+
+
+
+.focusable {
+  &:focus {
+    .detailed-status,
+    .detailed-status__action-bar {
+      background: rgba(lighten($ui-base-color, 8%), 0.3);
+    }
+  }
+}
+
+.detailed-status {
+  background: rgba(lighten($ui-base-color, 4%), 0.3);
+}
+
+.detailed-status__action-bar {
+  background: rgba(lighten($ui-base-color, 4%), 0.3);
+}
+
+.account__header {
+  background: rgba(lighten($ui-base-color, 4%), 0.6);
+  & > div {
+    background: rgba(lighten($ui-base-color, 4%), 0.6);
+  }
+}
+
+.column {
+  > .scrollable {
+    background: rgba(darken($ui-base-color, 8%), 0.7)
+  }
+}
+
+.ui {
+  background: rgba(darken($ui-base-color, 15%), 0.1);
+}
+
+.drawer__inner {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
+.drawer__inner__mastodon {
+  background: transparent url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 234.80078 31.757813" width="234.80078" height="31.757812"><path d="M19.599609 0c-1.05 0-2.10039.375-2.90039 1.125L0 16.925781v14.832031h234.80078V17.025391l-16.5-15.900391c-1.6-1.5-4.20078-1.5-5.80078 0l-13.80078 13.099609c-1.6 1.5-4.19883 1.5-5.79883 0L179.09961 1.125c-1.6-1.5-4.19883-1.5-5.79883 0L159.5 14.224609c-1.6 1.5-4.20078 1.5-5.80078 0L139.90039 1.125c-1.6-1.5-4.20078-1.5-5.80078 0l-13.79883 13.099609c-1.6 1.5-4.20078 1.5-5.80078 0L100.69922 1.125c-1.600001-1.5-4.198829-1.5-5.798829 0l-13.59961 13.099609c-1.6 1.5-4.200781 1.5-5.800781 0L61.699219 1.125c-1.6-1.5-4.198828-1.5-5.798828 0L42.099609 14.224609c-1.6 1.5-4.198828 1.5-5.798828 0L22.5 1.125C21.7.375 20.649609 0 19.599609 0z" fill="#{hex-color($ui-base-color)}"/></svg>') no-repeat bottom / 100% auto;
+}
+
+.drawer__header {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.tabs-bar {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.column-back-button {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.column-header__back-button {
+  background: transparent;
+}
+
+.column-link {
+  background: rgba($ui-base-color, 0.7);
+  &:hover {
+    background: rgba(lighten($ui-base-color, 15%), 0.85);
+  }
+}
+
+.column-subheading {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
+.getting-started__wrapper,
+.getting_started {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
+.getting-started {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
+.column-header {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.column-header__button {
+  background: transparent;
+
+  &.active {
+    background: rgba(lighten($ui-base-color, 8%), 0.85);
+
+    &:hover {
+      background: rgba(lighten($ui-base-color, 14%), 0.85);
+    }
+  }
+}
+
+.column-header__collapsible-inner {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.search__input {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+
+    &:focus {
+        background: rgba(darken($ui-base-color, 5%), 0.7);
+    }
+}
+
+.empty-column-indicator,
+.error-column {
+  background: rgba($ui-base-color, 0.7)
+}
+
+.account-section-headline {
+  background: rgba(lighten($ui-base-color, 2%), 0.7);
+}
+
+.landing-page {
+  p,
+  li {
+    color: lighten($ui-primary-color, 10%);
+  }
+
+  em {
+    color: lighten($ui-primary-color, 20%);
+  }
+
+  h1 {
+    small {
+      color: darken($ui-secondary-color, 20%);
+    }
+  }
+
+  .header-wrapper {
+    background: transparent;
+
+    &.compact {
+      background: transparent;
+      }
+    }
+
+  .header {
+    .links {
+      a {
+        color: lighten($ui-primary-color, 20%);
+      }
+    }
+
+    .hero {
+      .simple_form,
+      .closed-registrations-message {
+        background: rgba(lighten($ui-base-color, 8%), 0.7);
+      }
+    }
+  }
+
+  .about-short {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  .information-board {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+
+    .panel {
+      background: rgba(darken($ui-base-color, 15%), 0.7);
+    }
+  }
+
+  .features {
+    background: rgba(darken($ui-base-color, 15%), 0.8);
+
+    #mastodon-timeline {
+      background: transparent;
+    }
+  }
+
+  .extended-description {
+    background: rgba(darken($ui-base-color, 15%), 0.8);
+  }
+
+  .footer-links {
+    background: rgba(darken($ui-base-color, 15%), 0.8);
+  }
+
+  @media screen and (max-width: 675px) {
+    .header {
+      .links {
+        background: transparent;
+      }
+
+      .hero {
+        .simple_form,
+        .closed-registrations-message {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+  &.tag-page {
+    .features {
+      .container {
+        .about-mastodon {
+          .about-hashtag {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  #mastodon-timeline, .landing-page__forms, .landing-page__information, .landing-page__call-to-action {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  @media screen and (max-width: 700px) {
+    .grid .column-1 {
+      background-color: rgba(darken($ui-base-color, 15%), 0.7);
+    }
+    .landing-page__forms {
+      background-color: transparent;
+    }
+  }
+
+
+}
+
+.table {
+  & > tbody > tr:nth-child(odd) > td,
+  & > tbody > tr:nth-child(odd) > th {
+    background: rgba($ui-base-color, 0.75);
+  }
+}
+
+.admin-wrapper {
+  .sidebar-wrapper {
+    background: transparent;
+  }
+
+  .sidebar {
+    ul {
+      a {
+        &.selected {
+          background: rgba($ui-base-color, 0.75);
+        }
+      }
+
+      ul {
+        background: rgba(darken($ui-base-color, 4%), 0.85);
+      }
+    }
+  }
+
+  .content-wrapper {
+    background: rgba($ui-base-color, 0.75);
+  }
+}
+
+
