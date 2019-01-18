@@ -449,6 +449,12 @@ body {
   background-color: rgba(darken($ui-base-color, 15%), 0.7);
 }
 
+/* public tag timeline */
+
+.detailed-status, .detailed-status__action-bar {
+  background-color: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
 @media screen and (max-width:600px) {
   .public-layout {
     .public-account-header__bar {
