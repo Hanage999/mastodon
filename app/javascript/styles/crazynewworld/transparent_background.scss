@@ -263,7 +263,7 @@ body {
   .footer-links {
     background: rgba(darken($ui-base-color, 15%), 0.8);
   }
-  
+
   @media screen and (max-width: 675px) {
     .header {
       .links {
@@ -306,6 +306,12 @@ body {
 
   .container-alt {
     background: transparent;
+  }
+}
+
+.landing {
+  .hero-widget__footer {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);    
   }
 }
 
