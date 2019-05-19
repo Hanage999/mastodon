@@ -72,6 +72,10 @@ class Api::V1::StatusesController < Api::BaseController
 
   def set_status
     @status = Status.find(params[:id])
+    if !@status.preview_cards.first
+      FetchLinkCardService.new.call(@status)
+      @status = Status.find(params[:id])
+    end
     authorize @status, :show?
   rescue Mastodon::NotPermittedError
     raise ActiveRecord::RecordNotFound
