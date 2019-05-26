@@ -12,6 +12,16 @@
   background: lighten($ui-base-color, 20%);
 }
 
+.compose-panel {
+  .navigation-bar {
+    background: rgba(darken($ui-base-color, 8%), 0.7);
+  }
+}
+
+.compose-form {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
 body {
   &.no-reduce-motion {
     background: url($wallpaper) no-repeat fixed center top/cover;
@@ -139,6 +149,13 @@ body {
   }
 }
 
+.column-link--transparent {
+  background: rgba(darken($ui-base-color, 8%), 0.7);
+  &.active, &:hover {
+    background: rgba(darken($ui-base-color, 8%), 0.7);
+  }
+}
+
 .column-subheading {
   background: rgba(darken($ui-base-color, 8%), 0.7);
 }
@@ -150,6 +167,15 @@ body {
 
 .getting-started {
   background: rgba(darken($ui-base-color, 8%), 0.7);
+}
+
+.getting-started__footer {
+  p {
+    color: $classic-primary-color;
+    a {
+      color: $classic-primary-color;
+    }
+  }
 }
 
 .column-header {
