@@ -22,12 +22,6 @@
   background: rgba(darken($ui-base-color, 8%), 0.7);
 }
 
-.app-holder {
-  & > div {
-    width: 100%;
-  }
-}
-
 body {
   &.no-reduce-motion {
     background: url($wallpaper) no-repeat fixed center top/cover;
