@@ -61,7 +61,7 @@ body {
       height: 100%;
     }
 
-    background: darken($ui-base-color, 7%);
+    background: $ui-base-color;
 
     &.with-modals--active {
       overflow-y: hidden;
