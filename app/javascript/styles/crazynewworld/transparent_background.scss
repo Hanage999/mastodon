@@ -134,6 +134,14 @@ body {
   background: rgba(darken($ui-base-color, 15%), 0.7);
 }
 
+.tabs-bar__link {
+  border-bottom: none;
+  &.active {
+    background: none;
+    border-bottom: 2px solid $highlight-text-color;
+  }
+}
+
 .column-back-button {
   background: rgba(darken($ui-base-color, 15%), 0.7);
 }
@@ -151,8 +159,11 @@ body {
 
 .column-link--transparent {
   background: rgba(darken($ui-base-color, 8%), 0.7);
-  &.active, &:hover {
+  &.active {
     background: rgba(darken($ui-base-color, 8%), 0.7);
+    &:hover {
+      background: lighten($ui-base-color, 14%);
+    }
   }
 }
 
