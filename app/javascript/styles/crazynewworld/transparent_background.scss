@@ -139,6 +139,11 @@ body {
   &.active {
     background: none;
     border-bottom: 2px solid $highlight-text-color;
+    &:hover {
+      @media screen and (min-width: 631px) {
+        background: lighten($ui-base-color, 14%);
+      }
+    }
   }
 }
 
