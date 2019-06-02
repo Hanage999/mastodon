@@ -1830,7 +1830,14 @@ en:
     contrast: Mastodon (High contrast)
     default: Mastodon (Dark)
     mastodon-light: Mastodon (Light)
+<<<<<<< HEAD
     system: Automatic (use system theme)
+=======
+    mastodon-green: Mastodon (Green)
+    mastodon-blue: Mastodon (Blue)
+    crazynewworld: Crazynewworld (Green)
+    crazynewworld-blue: Crazynewworld (Blue)
+>>>>>>> 95b0ae089 (Add themes (default layout + transparency))
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
