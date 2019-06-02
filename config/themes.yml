@@ -1,5 +1,7 @@
 default: styles/application.scss
 contrast: styles/contrast.scss
 mastodon-light: styles/mastodon-light.scss
+mastodon-green: styles/mastodon-green.scss
+mastodon-blue: styles/mastodon-blue.scss
 crazynewworld: styles/crazynewworld.scss
 crazynewworld-blue: styles/crazynewworld-blue.scss
