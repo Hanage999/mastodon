@@ -1785,6 +1785,10 @@ ja:
     default: Mastodon (ダーク)
     mastodon-light: Mastodon (ライト)
     system: 自動 (システムのテーマを使用)
+    mastodon-green: Mastodon (緑)
+    mastodon-blue: Mastodon (青)
+    crazynewworld: Crazynewworld (緑)
+    crazynewworld-blue: Crazynewworld (青)
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"
