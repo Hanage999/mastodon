@@ -4,7 +4,7 @@
     
   .drawer {
       width: 30% !important;
-      height: 470px !important;
+      height: 490px !important;
       overflow: visible !important;
   }
 
@@ -14,9 +14,9 @@
 
   .column:nth-child(3) {
       position: fixed !important;
-      margin-top: 460px !important;
+      margin-top: 480px !important;
       padding-left: 10px !important;
-      height: calc(100% - 460px) !important;
+      height: calc(100% - 480px) !important;
       left: 0px !important;
       width: 30% !important;
   }
