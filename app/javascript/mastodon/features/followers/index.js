@@ -78,7 +78,7 @@ class Followers extends ImmutablePureComponent {
 
     return (
       <Column>
-        <ColumnBackButton multiColumn={multiColumn} />
+        <ColumnBackButton />
 
         <ScrollableList
           scrollKey='followers'

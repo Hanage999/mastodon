@@ -148,14 +148,14 @@ class ListTimeline extends React.PureComponent {
     } else if (list === false) {
       return (
         <Column>
-          <ColumnBackButton multiColumn={multiColumn} />
+          <ColumnBackButton />
           <MissingIndicator />
         </Column>
       );
     }
 
     return (
-      <Column bindToDocument={!multiColumn} ref={this.setRef} label={title}>
+      <Column ref={this.setRef} label={title}>
         <ColumnHeader
           icon='list-ul'
           active={hasUnread}

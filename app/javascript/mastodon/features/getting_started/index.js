@@ -149,7 +149,7 @@ class GettingStarted extends ImmutablePureComponent {
     }
 
     return (
-      <Column bindToDocument={!multiColumn} label={intl.formatMessage(messages.menu)}>
+      <Column label={intl.formatMessage(messages.menu)}>
         {multiColumn && <div className='column-header__wrapper'>
           <h1 className='column-header'>
             <button>

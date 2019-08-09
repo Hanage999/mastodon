@@ -51,7 +51,7 @@ class Reblogs extends ImmutablePureComponent {
 
     return (
       <Column>
-        <ColumnBackButton multiColumn={multiColumn} />
+        <ColumnBackButton />
 
         <ScrollableList
           scrollKey='reblogs'
