@@ -117,6 +117,14 @@ function main() {
 
     delegate(document, '.custom-emoji', 'mouseover', getEmojiAnimationHandler('data-original'));
     delegate(document, '.custom-emoji', 'mouseout', getEmojiAnimationHandler('data-static'));
+
+    if (document.body.classList.contains('with-modals')) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      const scrollbarWidthStyle = document.createElement('style');
+      scrollbarWidthStyle.id = 'scrollbar-width';
+      document.head.appendChild(scrollbarWidthStyle);
+      scrollbarWidthStyle.sheet.insertRule(`body.with-modals--active { margin-right: ${scrollbarWidth}px; }`, 0);
+    }
   });
 
   delegate(document, '.webapp-btn', 'click', ({ target, button }) => {
