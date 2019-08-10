@@ -173,21 +173,24 @@ body {
   background: rgba(darken($ui-base-color, 8%), 0.7);
 }
 
-.getting-started__wrapper,
-.getting_started {
-  background: rgba(darken($ui-base-color, 8%), 0.7);
-}
-
 .getting-started {
   background: rgba(darken($ui-base-color, 8%), 0.7);
-}
 
-.getting-started__footer {
-  p {
-    color: $classic-primary-color;
-    a {
+  &__wrapper {
+    background: rgba(darken($ui-base-color, 8%), 0.7);
+  }
+
+  &__footer {
+    p {
       color: $classic-primary-color;
+      a {
+        color: $classic-primary-color;
+      }
     }
+  }
+
+  &__trends {
+    background: rgba(darken($ui-base-color, 8%), 0.7);
   }
 }
 
