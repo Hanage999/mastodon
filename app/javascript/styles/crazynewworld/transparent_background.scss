@@ -48,19 +48,19 @@ body {
 @media screen and (max-width:740px) {
   body.about-body {
     background:none;
-  }
 
-  body.about-body::before {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: url($wallpaper) center/cover no-repeat;
-    -webkit-background-size: cover;
+    &::before {
+      content: "";
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      background: url($wallpaper) center/cover no-repeat;
+      -webkit-background-size: cover;
+    }
   }
 }
 
@@ -79,10 +79,10 @@ body {
 
 .detailed-status {
   background: rgba(lighten($ui-base-color, 4%), 0.3);
-}
 
-.detailed-status__action-bar {
-  background: rgba(lighten($ui-base-color, 4%), 0.3);
+  &__action-bar {
+    background: rgba(lighten($ui-base-color, 4%), 0.3);
+  }
 }
 
 .account__header {
@@ -94,7 +94,7 @@ body {
     background-size: cover;
   }
 
-  .account__header__fields {
+  &__fields {
     dt {
       background: rgba(darken($ui-base-color, 15%), 0.7);
     }
@@ -129,16 +129,17 @@ body {
 
 .tabs-bar {
   background: rgba(darken($ui-base-color, 15%), 0.85);
-}
 
-.tabs-bar__link {
-  border-bottom: none;
-  &.active {
-    background: none;
-    border-bottom: 2px solid $highlight-text-color;
-    &:hover {
-      @media screen and (min-width: 631px) {
-        background: lighten($ui-base-color, 14%);
+  &__link {
+    border-bottom: none;
+
+    &.active {
+      background: none;
+      border-bottom: 2px solid $highlight-text-color;
+      &:hover {
+        @media screen and (min-width: 631px) {
+          background: lighten($ui-base-color, 14%);
+        }
       }
     }
   }
@@ -154,9 +155,11 @@ body {
 
 .column-link {
   background: rgba($ui-base-color, 0.7);
+
   &:hover {
     background: rgba(lighten($ui-base-color, 15%), 0.85);
   }
+
 }
 
 .column-link--transparent {
@@ -196,22 +199,22 @@ body {
 
 .column-header {
   background: rgba(darken($ui-base-color, 15%), 0.7);
-}
 
-.column-header__button {
-  background: transparent;
+  &__button {
+    background: transparent;
 
-  &.active {
-    background: rgba(lighten($ui-base-color, 8%), 0.85);
+    &.active {
+      background: rgba(lighten($ui-base-color, 8%), 0.85);
 
-    &:hover {
-      background: rgba(lighten($ui-base-color, 14%), 0.85);
+      &:hover {
+        background: rgba(lighten($ui-base-color, 14%), 0.85);
+      }
     }
   }
-}
 
-.column-header__collapsible-inner {
-  background: rgba(darken($ui-base-color, 15%), 0.7);
+  &__collapsible-inner {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+  }
 }
 
 .search__input {
@@ -481,11 +484,11 @@ body {
 
 .directory {
   background-color: rgba(darken($ui-base-color, 15%), 0.7);
-}
 
-.directory__tag {
-  a {
-      background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  &__tag {
+    a {
+        background-color: rgba(darken($ui-base-color, 15%), 0.7);
+    } 
   }
 }
 
@@ -495,8 +498,12 @@ body {
 
 /* public tag timeline */
 
-.detailed-status, .detailed-status__action-bar {
+.detailed-status {
   background-color: rgba(darken($ui-base-color, 15%), 0.7);
+
+  &__action-bar {
+    background-color: rgba(darken($ui-base-color, 15%), 0.7);
+  }
 }
 
 @media screen and (max-width:600px) {
