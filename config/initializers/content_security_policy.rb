@@ -22,7 +22,7 @@ Rails.application.config.content_security_policy do |p|
   p.base_uri        :none
   p.default_src     :none
   p.frame_ancestors :none
-  p.font_src        :self, assets_host
+  p.font_src        :self, assets_host, :data
   p.img_src         :self, :https, :data, :blob, assets_host
   p.style_src       :self, assets_host
   p.media_src       :self, :https, :data, assets_host
@@ -38,11 +38,13 @@ Rails.application.config.content_security_policy do |p|
     p.script_src  :self, :unsafe_inline, :unsafe_eval, assets_host
     p.child_src   :self, :blob, assets_host
     p.worker_src  :self, :blob, assets_host
+    p.child_src   :self, :blob, assets_host
   else
     p.connect_src :self, :data, :blob, assets_host, media_host, Rails.configuration.x.streaming_api_base_url
     p.script_src  :self, assets_host, "'wasm-unsafe-eval'"
     p.child_src   :self, :blob, assets_host
     p.worker_src  :self, :blob, assets_host
+    p.child_src   :self, :blob, assets_host
   end
 end
 
