@@ -26,6 +26,8 @@ Rails.application.config.content_security_policy do |p|
   p.media_src       :self, :https, :data, assets_host
   p.frame_src       :self, :https
   p.manifest_src    :self, assets_host
+  p.child_src       :self, :blob
+  p.worker_src      :self, :blob
   p.report_uri      'https://mastodon.crazynewworld.net/cspcheck/wtf'
   
   if Rails.env.development?
