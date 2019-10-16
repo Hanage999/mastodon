@@ -366,6 +366,9 @@ body {
 .admin-wrapper {
   .sidebar-wrapper {
     background: transparent;
+    &__inner {
+      background: transparent;
+    }
   }
 
   .sidebar {
@@ -473,6 +476,10 @@ body {
 }
 
 .landing-page__call-to-action {
+  background-color: rgba(darken($ui-base-color, 15%), 0.7);
+}
+
+.table-of-contents {
   background-color: rgba(darken($ui-base-color, 15%), 0.7);
 }
 
