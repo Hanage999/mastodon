@@ -149,10 +149,6 @@ body {
   background: rgba(darken($ui-base-color, 15%), 0.7);
 }
 
-.column-header__back-button {
-  background: transparent;
-}
-
 .column-link {
   background: rgba($ui-base-color, 0.7);
 
@@ -212,6 +208,10 @@ body {
     }
   }
 
+  &__back-button {
+    background: transparent;
+  }
+
   &__collapsible-inner {
     background: rgba(darken($ui-base-color, 15%), 0.7);
   }
@@ -236,6 +236,10 @@ body {
 
 .input.required {
   background: rgba(darken($ui-base-color, 15%), 0.5);
+}
+
+.announcements {
+  background: rgba(darken($ui-base-color, 15%), 0.3);
 }
 
 .landing-page {
