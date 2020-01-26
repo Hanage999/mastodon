@@ -239,7 +239,8 @@ body {
 }
 
 .announcements {
-  background: rgba(darken($ui-base-color, 15%), 0.3);
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+  border-top: 1px solid $ui-base-color;
 }
 
 .landing-page {
