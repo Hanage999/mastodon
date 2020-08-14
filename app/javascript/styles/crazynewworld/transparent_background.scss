@@ -502,6 +502,19 @@ body {
         background-color: rgba(darken($ui-base-color, 15%), 0.7);
     } 
   }
+
+  &__card {
+    &__extra {
+      background-color: rgba(darken($ui-base-color, 8%), 0.7);
+    }
+    &__bar {
+      background-color: rgba(darken($ui-base-color, 15%), 0.7);
+    }
+  }
+}
+
+.filter-form {
+  background-color: rgba(darken($ui-base-color, 8%), 0.7);
 }
 
 .nothing-here {
