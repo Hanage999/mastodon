@@ -1,10 +1,10 @@
-/* 3ペイン化 */
+/* 通知を一番左の列に組み込み */
 
 @media screen and (min-width:741px) {
     
   .drawer {
-      width: 30% !important;
-      height: 490px !important;
+      width: 25% !important;
+      height: 510px !important;
       overflow: visible !important;
   }
 
@@ -14,11 +14,11 @@
 
   .column:nth-child(3) {
       position: fixed !important;
-      margin-top: 480px !important;
+      margin-top: 500px !important;
       padding-left: 10px !important;
-      height: calc(100% - 480px) !important;
+      height: calc(100% - 500px) !important;
       left: 0px !important;
-      width: 30% !important;
+      width: 25% !important;
   }
 
   .column:nth-child(3) + div .mastodon-column-container {
