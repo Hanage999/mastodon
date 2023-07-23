@@ -162,12 +162,11 @@ end
 
 group :development do
   # Code linting CLI and plugins
-  gem 'rubocop', require: false
-  gem 'rubocop-capybara', require: false
-  gem 'rubocop-performance', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec', require: false
-  gem 'rubocop-rspec_rails', require: false
+  #  gem 'rubocop', require: false
+  #  gem 'rubocop-capybara', require: false
+  #  gem 'rubocop-performance', require: false
+  #  gem 'rubocop-rails', require: false
+  #  gem 'rubocop-rspec', require: false
 
   # Annotates modules with schema
   gem 'annotate', '~> 3.2'
@@ -213,6 +212,12 @@ end
 
 group :production do
   gem 'lograge', '~> 0.12'
+  # Code linting CLI and plugins
+  gem 'rubocop', require: true
+  gem 'rubocop-capybara', require: true
+  gem 'rubocop-performance', require: true
+  gem 'rubocop-rails', require: true
+  gem 'rubocop-rspec', require: true
 end
 
 gem 'cocoon', '~> 1.2'
