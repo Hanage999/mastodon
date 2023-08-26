@@ -30,7 +30,12 @@ class AccountsIndex < Chewy::Index
     analyzer: {
       # "The FOOING's bar" becomes "foo bar"
       natural: {
-        tokenizer: 'standard',
+        tokenizer: 'kuromoji_user_dict',
+        char_filter: %w(
+          icu_normalizer
+          html_strip
+          kuromoji_iteration_mark
+        ),
         filter: %w(
           lowercase
           asciifolding
@@ -39,6 +44,10 @@ class AccountsIndex < Chewy::Index
           english_possessive_stemmer
           english_stop
           english_stemmer
+          kurojoji_stemmer
+          kuromoji_number
+          kuromoji_baseform
+          icu_normalizer
         ),
       },
 
@@ -67,6 +76,12 @@ class AccountsIndex < Chewy::Index
         type: 'edge_ngram',
         min_gram: 1,
         max_gram: 15,
+      },
+
+      kuromoji_user_dict: {
+        type: 'kuromoji_tokenizer',
+	mode: 'search',
+        user_dictionary: 'userdic.txt',
       },
     },
   }
