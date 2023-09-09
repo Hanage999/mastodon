@@ -31,6 +31,7 @@ class AccountsIndex < Chewy::Index
       # "The FOOING's bar" becomes "foo bar"
       natural: {
         tokenizer: 'kuromoji_user_dict',
+        type: 'custom',
         char_filter: %w(
           icu_normalizer
           html_strip
@@ -44,7 +45,7 @@ class AccountsIndex < Chewy::Index
           english_possessive_stemmer
           english_stop
           english_stemmer
-          kurojoji_stemmer
+          kuromoji_stemmer
           kuromoji_number
           kuromoji_baseform
           icu_normalizer
@@ -80,7 +81,7 @@ class AccountsIndex < Chewy::Index
 
       kuromoji_user_dict: {
         type: 'kuromoji_tokenizer',
-	mode: 'search',
+        mode: 'search',
         user_dictionary: 'userdic.txt',
       },
     },
