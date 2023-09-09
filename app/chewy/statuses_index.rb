@@ -24,7 +24,7 @@ class StatusesIndex < Chewy::Index
     tokenizer: {
       kuromoji_user_dict: {
         type: 'kuromoji_tokenizer',
-	mode: 'search',
+        mode: 'search',
         user_dictionary: 'userdic.txt',
       },
     },
@@ -51,7 +51,7 @@ class StatusesIndex < Chewy::Index
           english_possessive_stemmer
           english_stop
           english_stemmer
-          kurojoji_stemmer
+          kuromoji_stemmer
           kuromoji_number
           kuromoji_baseform
           icu_normalizer
