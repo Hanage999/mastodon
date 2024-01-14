@@ -73,6 +73,10 @@ body {
   }
 }
 
+.status__wrapper-direct {
+  background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.5);
+}
+
 .status-card {
   background: rgba(darken($ui-base-color, 15%), 0.3);
 }
@@ -85,20 +89,27 @@ body {
   }
 }
 
+.detailed-status__wrapper-direct {
+  .detailed-status,
+  .detailed-status__action-bar {
+    background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.7);
+  }
+}
+
 .account__header {
   background: rgba(darken($ui-base-color, 15%), 0.2);
   background-size: cover;
-
-  & > div {
-    background: rgba(darken($ui-base-color, 15%), 0.2);
-    background-size: cover;
-  }
 
   &__fields {
     dt {
       background: rgba(darken($ui-base-color, 15%), 0.7);
     }
   }
+}
+
+.scrollable .account-card {
+  background: rgba(lighten($ui-base-color, 8%), 0.6);
+  border: 1px solid lighten($ui-base-color, 8%);
 }
 
 .account__section-headline {
@@ -450,10 +461,9 @@ body {
   background-color: rgba(darken($ui-base-color, 15%), 0.8);
 }
 
-.account__header__fields {
-  dt {
-    background: rgba(darken($ui-base-color, 8%), 0.8);
-  }
+.account__header__bio .account__header__fields {
+  background: rgba(darken($ui-base-color, 8%), 0.3);
+  border: 1px solid lighten($ui-base-color, 8%);
 }
 
 .endorsements-widget {
@@ -523,13 +533,14 @@ body {
 
 /* public tag timeline */
 
-.detailed-status {
+/*.detailed-status {
   background-color: rgba(darken($ui-base-color, 15%), 0.7);
 
   &__action-bar {
     background-color: rgba(darken($ui-base-color, 15%), 0.7);
   }
 }
+*/
 
 @media screen and (max-width:600px) {
   .public-layout {
