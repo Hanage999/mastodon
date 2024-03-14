@@ -8,21 +8,27 @@ body, .tabs-bar__wrapper {
 
 /* 情報要素の背景を暗くしてブラーを施す */
 
-#tabs-bar__portal,
-.notification__filter-bar,
+.column-back-button,
 .navigation-panel,
 .search__input,
-.columns-area--mobile .column,
 .drawer__header,
 .drawer__inner,
 .search-results,
 .link-footer,
 .getting-started__trends,
-.server-banner,
-.layout-single-column .navigation-bar,
-.layout-single-column .reply-indicator,
-.layout-single-column .compose-form__highlightable {
+.server-banner {
   backdrop-filter: var(--background-filter-dark);
+}
+
+.layout-single-column {
+
+  .column-header__wrapper,
+  .columns-area--mobile .column,
+  .navigation-bar,
+  .reply-indicator,
+  .compose-form__highlightable {
+    backdrop-filter: var(--background-filter-dark);
+  }
 }
 
 .layout-multiple-columns .column {
@@ -32,7 +38,7 @@ body, .tabs-bar__wrapper {
   .column-header__collapsible,
   .column-header__collapsible-inner,
   .column-inline-form,
-  .column-back-button,
+  .notification__filter-bar,
   .account__section-headline,
   .explore__search-results,
   .explore__search-header {
