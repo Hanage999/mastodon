@@ -4,6 +4,46 @@ body {
   background: url($wallpaper) no-repeat fixed center top/cover;
 }
 
+/* 情報要素の背景を暗くしてブラーを施す */
+
+.column-back-button,
+.navigation-panel,
+.search__input,
+.drawer__header,
+.drawer__inner,
+.search-results,
+.link-footer,
+.getting-started__trends,
+.server-banner {
+  backdrop-filter: var(--background-filter-dark);
+}
+
+.layout-single-column {
+
+  .column-header__wrapper,
+  .columns-area--mobile .column,
+  .navigation-bar,
+  .reply-indicator,
+  .compose-form__highlightable {
+    backdrop-filter: var(--background-filter-dark);
+  }
+}
+
+.layout-multiple-columns .column {
+
+  &>.scrollable,
+  .column-header,
+  .column-header__collapsible,
+  .column-header__collapsible-inner,
+  .column-inline-form,
+  .notification__filter-bar,
+  .account__section-headline,
+  .explore__search-results,
+  .explore__search-header {
+    backdrop-filter: var(--background-filter-dark);
+  }
+}
+
 .drawer__inner {
   background: initial;
 
