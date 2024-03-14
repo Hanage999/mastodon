@@ -1,0 +1,36 @@
+/* 半透明デザイン */
+
+body, .tabs-bar__wrapper {
+  background: url($wallpaper) no-repeat fixed center top/cover;
+}
+
+.drawer__inner {
+  background: initial;
+
+  .search-results__section {
+    background: var(--background-color);
+  }
+
+  &__mastodon {
+    background: initial;
+  }
+}
+
+.compose-form {
+
+  &__highlightable {
+    background: rgba(darken($ui-base-color, 15%), 0.7);
+  }
+
+  .autosuggest-textarea__textarea, .spoiler-input__input {
+    background: initial;
+  }
+}
+
+.explore__search-header {
+  background: none;
+}
+
+.search__input {
+  background: rgba(darken($ui-base-color, 15%), 0.7);
+}
