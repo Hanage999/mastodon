@@ -8,6 +8,7 @@ body, .tabs-bar__wrapper {
 
 /* 情報要素の背景を暗くしてブラーを施す */
 
+.column-header__wrapper,
 .column-back-button,
 .navigation-panel,
 .search__input,
@@ -22,7 +23,6 @@ body, .tabs-bar__wrapper {
 
 .layout-single-column {
 
-  .column-header__wrapper,
   .columns-area--mobile .column,
   .navigation-bar,
   .reply-indicator,
@@ -34,9 +34,6 @@ body, .tabs-bar__wrapper {
 .layout-multiple-columns .column {
 
   &>.scrollable,
-  .column-header,
-  .column-header__collapsible,
-  .column-header__collapsible-inner,
   .column-inline-form,
   .notification__filter-bar,
   .account__section-headline,
@@ -110,6 +107,10 @@ body, .tabs-bar__wrapper {
   border-radius: 4px;
 };
 
+.column-header__wrapper {
+  border-radius: 4px 4px 0px 0px;
+}
+
 /* シングルカラムUIの調整 */
 
 .layout-single-column {
@@ -141,11 +142,13 @@ body, .tabs-bar__wrapper {
 
 .reply-indicator__line::before {
   background: lighten($ui-base-color, 60%);
+  box-shadow: 2px 2px 2px black;
 }
 
 @media screen and (max-width:1174px) {
 
-  .navigation-panel {
+  .navigation-panel,
+  .column-header__wrapper {
     border-radius: 0;
   }
 }
