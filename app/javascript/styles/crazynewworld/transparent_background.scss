@@ -91,9 +91,12 @@ body, .tabs-bar__wrapper {
   background: rgba(darken($ui-base-color, 15%), 0.3);
 }
 
-.detailed-status__wrapper-direct .detailed-status,
-.detailed-status__wrapper-direct .detailed-status__action-bar {
-  background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.6);
+.detailed-status__wrapper-direct {
+
+  .detailed-status,
+  .detailed-status__action-bar {
+    background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.6);
+  }
 }
 
 /* 角を取る */
@@ -109,35 +112,35 @@ body, .tabs-bar__wrapper {
 
 /* シングルカラムUIの調整 */
 
-.navigation-panel,
-.link-footer {
-  margin-bottom: 10px;
-}
-
 .layout-single-column {
 
-  .reply-indicator,
-  .navigation-bar {
+  .navigation-bar,
+  .reply-indicator {
     padding: 3px 3px 3px 5px;
+  }
+
+  .column {
+
+    .navigation-bar,
+    .reply-indicator {
+      padding: 0;
+      backdrop-filter: none;
+    }
   }
 }
 
+.navigation-panel {
+  margin-bottom: 10px;
+}
+
 .link-footer {
+  margin-bottom: 10px;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .reply-indicator__line::before {
   background: lighten($ui-base-color, 60%);
-}
-
-.layout-single-column .column {
-
-  .navigation-bar,
-  .reply-indicator {
-    padding: 0;
-    backdrop-filter: none;
-  }
 }
 
 @media screen and (max-width:1174px) {
