@@ -5,14 +5,14 @@ body, .tabs-bar__wrapper {
 }
 
 .drawer__inner {
-  background: initial;
+  background: none;
 
   .search-results__section {
     background: var(--background-color);
   }
 
   &__mastodon {
-    background: initial;
+    background: none;
   }
 }
 
@@ -23,7 +23,7 @@ body, .tabs-bar__wrapper {
   }
 
   .autosuggest-textarea__textarea, .spoiler-input__input {
-    background: initial;
+    background: none;
   }
 }
 
