@@ -64,5 +64,82 @@ body {
 }
 
 .search__input {
-  background: rgba(darken($ui-base-color, 15%), 0.7);
+  background: rgba(darken($ui-base-color, 15%), 0.5);
+}
+
+/* 意味のある色変更 */
+
+.column-subheading {
+  background: rgba(darken($ui-base-color, 15%), 0.3);
+}
+
+.detailed-status__wrapper-direct {
+
+  .detailed-status,
+  .detailed-status__action-bar {
+    background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.6);
+  }
+}
+
+/* 角を取る */
+
+.navigation-panel,
+.navigation-bar,
+.link-footer,
+.getting-started__trends,
+.server-banner,
+.layout-single-column .reply-indicator {
+  border-radius: 4px;
+};
+
+/* シングルカラムUIの調整 */
+
+.layout-single-column {
+
+  .navigation-bar,
+  .reply-indicator {
+    padding: 3px 3px 3px 5px;
+  }
+
+  .column {
+
+    .navigation-bar,
+    .reply-indicator {
+      padding: 0;
+      backdrop-filter: none;
+    }
+  }
+}
+
+.navigation-panel {
+  margin-bottom: 10px;
+}
+
+.link-footer {
+  margin-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.reply-indicator__line::before {
+  background: lighten($ui-base-color, 60%);
+}
+
+@media screen and (max-width:1174px) {
+
+  .navigation-panel {
+    border-radius: 0;
+  }
+}
+
+/* About画面の調整 */
+
+.server-banner {
+  padding: 20px 10px;
+}
+
+/* 変数の追加 */
+
+:root {
+  --background-filter-dark: blur(4px) saturate(180%) contrast(75%) brightness(30%);
 }
