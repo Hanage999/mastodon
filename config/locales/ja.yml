@@ -1794,6 +1794,9 @@ ja:
     crazynewworld-tricolor: Crazynewworld (三色)
     crazynewworld2: Crazynewworld 2 (緑)
     crazynewworld2-blue: Crazynewworld 2 (青)
+    crazynewworld2-sakura: Crazynewworld 2 (桜)
+    crazynewworld2-shouwa: Crazynewworld 2 (昭和)
+    crazynewworld2-tricolor: Crazynewworld 2 (三色)
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"

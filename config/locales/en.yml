@@ -1840,6 +1840,9 @@ en:
     crazynewworld-tricolor: Crazynewworld (Tricolor)
     crazynewworld2: Crazynewworld 2 (Green)
     crazynewworld2-blue: Crazynewworld 2 (Blue)
+    crazynewworld2-sakura: Crazynewworld 2 (Sakura)
+    crazynewworld2-shouwa: Crazynewworld 2 (Shouwa)
+    crazynewworld2-tricolor: Crazynewworld 2 (Tricolor)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
