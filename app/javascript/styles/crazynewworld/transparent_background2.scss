@@ -4,6 +4,11 @@ body, .tabs-bar__wrapper {
   background: url($wallpaper) no-repeat fixed center top/cover;
 }
 
+body.admin,
+.admin-wrapper .sidebar-wrapper__inner {
+  background: url($wallpaper) no-repeat fixed center top/cover;
+}
+
 .drawer__inner {
   background: none;
 
