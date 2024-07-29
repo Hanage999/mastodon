@@ -3,6 +3,8 @@
 /* 壁紙 */
 
 body,
+body.admin,
+.admin-wrapper .sidebar-wrapper__inner,
 .tabs-bar__wrapper {
   background: url($wallpaper-dark) no-repeat fixed center top/cover;
 }
