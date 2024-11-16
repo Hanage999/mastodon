@@ -1,150 +1,261 @@
-/* 半透明デザイン */
+@use "sass:color";
 
-body {
-  background: url($wallpaper) no-repeat fixed center top/cover;
-}
-
-/* 情報要素の背景を暗くしてブラーを施す */
-
-.column-back-button,
-.navigation-panel,
-.search__input,
-.drawer__header,
-.drawer__inner,
-.search-results,
-.link-footer,
-.getting-started__trends,
-.server-banner {
-  backdrop-filter: var(--background-filter-dark);
-}
-
-.layout-single-column {
-
-  .column-header__wrapper,
-  .columns-area--mobile .column,
-  .navigation-bar,
-  .reply-indicator,
-  .compose-form__highlightable {
-    backdrop-filter: var(--background-filter-dark);
-  }
-}
-
-.layout-multiple-columns .column {
-
-  &>.scrollable,
-  .column-header,
-  .column-header__collapsible,
-  .column-header__collapsible-inner,
-  .column-inline-form,
-  .notification__filter-bar,
-  .account__section-headline,
-  .explore__search-results,
-  .explore__search-header {
-    backdrop-filter: var(--background-filter-dark);
-  }
-body,
-body.admin,
-.admin-wrapper .sidebar-wrapper__inner,
-.tabs-bar__wrapper {
-  background: url($wallpaper-dark) no-repeat fixed center top/cover;
-}
-
-.drawer__inner {
-  background: initial;
-
-  &__mastodon {
-    background: initial;
-  }
-}
-
-.compose-form {
-
-  &__highlightable {
-    background: rgba(darken($ui-base-color, 15%), 0.7);
+@mixin transparent-background(
+  $wallpaper-dark,
+  $wallpaper,
+  $mobile-breakpoint
+) {
+  .transparent-bg {
+    background: url($wallpaper-dark) no-repeat fixed center top/cover;
   }
 
-  .autosuggest-textarea__textarea, .spoiler-input__input {
-    background: initial;
-  }
-}
+  /* 半透明デザイン */
 
-.search__input {
-  background: rgba(darken($ui-base-color, 15%), 0.5);
-}
+  /* 壁紙 */
 
-/* 意味のある色変更 */
-
-.column-subheading {
-  background: rgba(darken($ui-base-color, 15%), 0.3);
-}
-
-.detailed-status__wrapper-direct {
-
-  .detailed-status,
-  .detailed-status__action-bar {
-    background: rgba(mix($ui-base-color, $ui-highlight-color, 95%), 0.6);
-  }
-}
-
-/* 角を取る */
-
-.navigation-panel,
-.navigation-bar,
-.link-footer,
-.getting-started__trends,
-.server-banner,
-.layout-single-column .reply-indicator {
-  border-radius: 4px;
-};
-
-/* シングルカラムUIの調整 */
-
-.layout-single-column {
-
-  .navigation-bar,
-  .reply-indicator {
-    padding: 3px 3px 3px 5px;
+  body,
+  body.admin,
+  .admin-wrapper .sidebar-wrapper__inner,
+  .tabs-bar__wrapper {
+    background: url($wallpaper-dark) no-repeat fixed center top/cover;
   }
 
-  .column {
+  .columns-area__panels__main {
+    background: none;
+  }
 
-    .navigation-bar,
-    .reply-indicator {
-      padding: 0;
-      backdrop-filter: none;
+  .drawer__inner {
+    background: none;
+
+    .search-results__section {
+      background: var(--background-color);
+    }
+
+    &__mastodon {
+      background: none;
     }
   }
-}
 
-.navigation-panel {
-  margin-bottom: 10px;
-}
+  .compose-form {
 
-.link-footer {
-  margin-bottom: 10px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
+    &__highlightable {
+      background: rgba(9, 9, 12, 0.7);
+    }
 
-.reply-indicator__line::before {
-  background: lighten($ui-base-color, 60%);
-}
-
-@media screen and (max-width:1174px) {
-
-  .navigation-panel {
-    border-radius: 0;
+    .autosuggest-textarea__textarea,
+    .spoiler-input__input {
+      background: none;
+    }
   }
-}
 
-/* About画面の調整 */
+  .explore__search-header {
+    background: none;
+  }
 
-.server-banner {
-  padding: 20px 10px;
+  .search__input {
+    background: rgba(9, 9, 12, 0.7);
+  }
+
+  /* モーダル等 */
+
+  .ui__navigation-bar,
+  .search__popout,
+  .dropdown-menu,
+  .interaction-modal,
+  .boost-modal,
+  .report-modal,
+  .actions-modal,
+  .compare-history-modal {
+    background: none;
+    backdrop-filter: var(--background-filter-dark);
+  }
+
+  .search.active .search__popout {
+    background: var(--color-bg-overlay);
+  }
+
+  @media screen and (max-width: #{ $mobile-breakpoint - 1 }) {
+    body {
+      background: none;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      background: url($wallpaper-dark) no-repeat center center/cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+
+    .layout-single-column .ui__header,
+    .admin-wrapper .sidebar__toggle,
+    .tabs-bar__wrapper,
+    .columns-area__panels__pane--navigational .columns-area__panels__pane__inner {
+      background: none;
+      backdrop-filter: var(--background-filter-dark);
+    }
+
+    .search-results__section__header {
+      background: none;
+      backdrop-filter: var(--background-filter-darker);
+    }
+  }
+
+  @media screen and (min-width: $mobile-breakpoint) {
+
+    body,
+    .tabs-bar__wrapper {
+        background: url($wallpaper) no-repeat fixed center top/cover;
+    }
+
+    /* 情報要素の背景を暗くしてブラーを施す */
+
+    .column-header__wrapper,
+    .column-back-button,
+    .navigation-panel,
+    .search__input,
+    .drawer__header,
+    .drawer__inner,
+    .search-results,
+    .link-footer,
+    .getting-started__trends,
+    .server-banner {
+      backdrop-filter: var(--background-filter-dark);
+    }
+
+    .layout-single-column {
+
+      .columns-area--mobile .column,
+      .navigation-bar,
+      .reply-indicator,
+      .compose-form__highlightable {
+        backdrop-filter: var(--background-filter-dark);
+      }
+    }
+
+    .layout-multiple-columns .column {
+
+      &>.scrollable,
+      .column-inline-form,
+      .notification__filter-bar,
+      .account__section-headline,
+      .explore__search-results,
+      .explore__search-header {
+        backdrop-filter: var(--background-filter-dark);
+      }
+    }
+
+    .drawer__inner {
+
+      .search-results {
+        background: none;
+      }
+
+      .search-results__section {
+        background: none;
+      }
+    }
+
+    .explore__search-results {
+      background: none;
+    }
+
+    /* 文字入力フォームの背景を暗く */
+
+    .compose-form {
+
+      &__highlightable {
+        background: rgba(9, 9, 12, 0.5);
+      }
+    }
+
+    .search__input {
+      background: rgba(9, 9, 12, 0.5);
+    }
+
+    /* 意味のある色変更 */
+
+    .column-subheading {
+      background: rgba(73, 73, 101, 0.3);
+    }
+
+    .detailed-status__wrapper-direct {
+
+      .detailed-status,
+      .detailed-status__action-bar {
+        background: rgba(44, 44, 66, 0.6);
+      }
+    }
+
+    .search-results__section__header {
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: none;
+    }
+
+    /* 角を取る */
+
+    .navigation-panel,
+    .navigation-bar,
+    .link-footer,
+    .getting-started__trends,
+    .server-banner,
+    .layout-single-column .reply-indicator {
+      border-radius: 4px;
+    };
+
+    .column-header__wrapper {
+      border-radius: 4px 4px 0px 0px;
+    }
+
+    /* シングルカラムUIの調整 */
+
+    .layout-single-column {
+
+      .navigation-bar,
+      .reply-indicator {
+        padding: 3px 3px 3px 5px;
+      }
+
+      .column {
+
+        .navigation-bar,
+        .reply-indicator {
+          padding: 0;
+          backdrop-filter: none;
+        }
+      }
+    }
+
+    .navigation-panel {
+      margin-bottom: 10px;
+    }
+
+    .link-footer {
+      margin-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    .reply-indicator__line::before {
+      background: rgb(193, 193, 210);
+      box-shadow: 2px 2px 2px black;
+    }
+
+    /* About画面の調整 */
+
+    .server-banner {
+      padding: 20px 10px;
+    }
+  }
 }
 
 /* 変数の追加 */
 
 :root {
   --background-filter-dark: blur(10px) saturate(180%) contrast(75%) brightness(30%);
+  --background-filter-darker: blur(10px) saturate(180%) contrast(75%) brightness(15%);
 }
