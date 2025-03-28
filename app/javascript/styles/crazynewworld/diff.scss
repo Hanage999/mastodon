@@ -1,0 +1,20 @@
+/* 半透明＋カラム幅広 */
+
+@use './transparent_background' as tp;
+@use './compact';
+
+@mixin apply-crazynewworld-theme(
+  $wallpaper-dark,
+  $wallpaper,
+  $ui-base-color,
+  $ui-highlight-color,
+  $no-gap-breakpoint
+) {
+  @include tp.transparent-background(
+    $wallpaper-dark,
+    $wallpaper,
+    $ui-base-color,
+    $ui-highlight-color,
+    $no-gap-breakpoint
+  );
+}
