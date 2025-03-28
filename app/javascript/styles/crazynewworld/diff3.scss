@@ -1,0 +1,17 @@
+/* 新・半透明 */
+
+@use './transparent_background2' as tp;
+
+@mixin apply-crazynewworld-theme(
+  $wallpaper,
+  $ui-base-color,
+  $ui-highlight-color,
+  $no-gap-breakpoint
+) {
+  @include tp.transparent-background(
+    $wallpaper,
+    $ui-base-color,
+    $ui-highlight-color,
+    $no-gap-breakpoint
+  );
+}
