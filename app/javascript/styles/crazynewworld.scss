@@ -1,4 +1,13 @@
+<<<<<<< HEAD
 @import 'crazynewworld/variables';
 @import 'application';
 @import 'crazynewworld/compact';
 @import 'crazynewworld/transparent_background';
+=======
+@use 'crazynewworld/background2' as *;
+@use 'mastodon/variables' as *;
+@use 'application';
+@use 'crazynewworld/diff' as diff;
+
+@include diff.apply-crazynewworld-theme($wallpaper-dark, $wallpaper, $ui-base-color, $ui-highlight-color, $no-gap-breakpoint);
+>>>>>>> 896ffc4302 (Conform to new SCSS standard)
