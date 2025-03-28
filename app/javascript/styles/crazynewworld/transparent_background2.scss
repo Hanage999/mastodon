@@ -1,43 +1,54 @@
 @use "sass:color";
 
-/* 半透明デザイン */
-
-body, .tabs-bar__wrapper {
-  background: url($wallpaper) no-repeat fixed center top/cover;
-}
-
-body.admin,
-.admin-wrapper .sidebar-wrapper__inner {
-  background: url($wallpaper) no-repeat fixed center top/cover;
-}
-
-.drawer__inner {
-  background: none;
-
-  .search-results__section {
-    background: var(--background-color);
+@mixin transparent-background($wallpaper,
+  $ui-base-color,
+  $ui-highlight-color,
+  $no-gap-breakpoint) {
+  .transparent-bg {
+    background: url(#{$wallpaper}) no-repeat fixed center top/cover;
   }
 
-  &__mastodon {
+  /* 半透明デザイン */
+
+  body,
+  .tabs-bar__wrapper {
+    background: url($wallpaper) no-repeat fixed center top/cover;
+  }
+
+  body.admin,
+  .admin-wrapper .sidebar-wrapper__inner {
+    background: url($wallpaper) no-repeat fixed center top/cover;
+  }
+
+  .drawer__inner {
+    background: none;
+
+    .search-results__section {
+      background: var(--background-color);
+    }
+
+    &__mastodon {
+      background: none;
+    }
+  }
+
+  .compose-form {
+
+    &__highlightable {
+      background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
+    }
+
+    .autosuggest-textarea__textarea,
+    .spoiler-input__input {
+      background: none;
+    }
+  }
+
+  .explore__search-header {
     background: none;
   }
-}
 
-.compose-form {
-
-  &__highlightable {
+  .search__input {
     background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
   }
-
-  .autosuggest-textarea__textarea, .spoiler-input__input {
-    background: none;
-  }
-}
-
-.explore__search-header {
-  background: none;
-}
-
-.search__input {
-  background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
 }
