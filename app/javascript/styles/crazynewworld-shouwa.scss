@@ -1,6 +1,0 @@
-@use 'crazynewworld/shouwa' as *;
-@use 'mastodon/variables' as *;
-@use 'application';
-@use 'crazynewworld/diff' as diff;
-
-@include diff.apply-crazynewworld-theme($wallpaper-dark, $wallpaper, $ui-base-color, $ui-highlight-color, $no-gap-breakpoint);
