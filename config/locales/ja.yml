@@ -1915,6 +1915,23 @@ ja:
     past_preamble_html: 前回の訪問時から利用規約が変更されました。更新された条件を確認することをお勧めします。
     review_link: 利用規約を確認する
     title: "%{domain} の利用規約が変更されています"
+  themes:
+    contrast: Mastodon (ハイコントラスト)
+    default: Mastodon (ダーク)
+    mastodon-light: Mastodon (ライト)
+    system: 自動 (システムのテーマを使用)
+    mastodon-green: Mastodon (緑)
+    mastodon-blue: Mastodon (青)
+    green: Crazynewworld (緑)
+    blue: Crazynewworld (青)
+    sakura: Crazynewworld (桜)
+    shouwa: Crazynewworld (昭和)
+    tricolor: Crazynewworld (三色)
+    green-dark: Crazynewworld (緑 ダーク)
+    blue-dark: Crazynewworld (青 ダーク)
+    sakura-dark: Crazynewworld (桜 ダーク)
+    shouwa-dark: Crazynewworld (昭和 ダーク)
+    tricolor-dark: Crazynewworld (三色 ダーク)
   time:
     formats:
       default: "%Y年%m月%d日 %H:%M"
