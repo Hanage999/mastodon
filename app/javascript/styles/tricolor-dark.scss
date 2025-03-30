@@ -1,0 +1,7 @@
+@use 'mastodon/variables' as *;
+@use 'application';
+@use 'crazynewworld/diff_transparent_dark_compact' as diff;
+
+$wallpaper: "crazynewworld/tricolor-dark.jpg";
+
+@include diff.apply-crazynewworld-theme($wallpaper, $ui-base-color, $ui-highlight-color, $no-gap-breakpoint);
