@@ -1,6 +1,7 @@
-@use 'crazynewworld/background2-dark' as *;
 @use 'mastodon/variables' as *;
 @use 'application';
-@use 'crazynewworld/diff3' as diff;
+@use 'crazynewworld/diff_transparent_dark' as diff;
+
+$wallpaper: "crazynewworld/green-dark.jpg";
 
 @include diff.apply-crazynewworld-theme($wallpaper, $ui-base-color, $ui-highlight-color, $no-gap-breakpoint);
