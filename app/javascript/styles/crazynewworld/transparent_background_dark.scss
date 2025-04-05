@@ -1,9 +1,11 @@
 @use "sass:color";
 
-@mixin transparent-background($wallpaper,
+@mixin transparent-background(
+  $wallpaper,
   $ui-base-color,
   $ui-highlight-color,
-  $no-gap-breakpoint) {
+  $no-gap-breakpoint
+) {
   .transparent-bg {
     background: url(#{$wallpaper}) no-repeat fixed center top/cover;
   }
@@ -51,4 +53,40 @@
   .search__input {
     background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
   }
+
+  @media screen and (max-width: #{ $no-gap-breakpoint - 1 }) {
+    body {
+      background: none;
+      position: relative;
+    }
+
+    .layout-single-column .ui__header,
+    .admin-wrapper .sidebar__toggle {
+      background: none;
+      backdrop-filter: var(--background-filter-darker);
+    }
+
+    .tabs-bar__wrapper {
+      background: none;
+      backdrop-filter: var(--background-filter-dark);
+    }
+
+    body::before {
+      content: "";
+      background: url(#{$wallpaper}) no-repeat center center/cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+  }
+}
+
+/* 変数の追加 */
+
+:root {
+  --background-filter-dark: blur(10px) saturate(180%) contrast(75%) brightness(30%);
+  --background-filter-darker: blur(10px) saturate(180%) contrast(75%) brightness(15%);
 }
