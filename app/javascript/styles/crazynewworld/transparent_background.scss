@@ -123,6 +123,35 @@
     background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
   }
 
+  @media screen and (max-width: #{ $no-gap-breakpoint - 1 }) {
+    body {
+      background: none;
+      position: relative;
+    }
+
+    .layout-single-column .ui__header,
+    .admin-wrapper .sidebar__toggle {
+      background: none;
+      backdrop-filter: var(--background-filter-darker);
+    }
+
+    .tabs-bar__wrapper {
+      background: none;
+      backdrop-filter: var(--background-filter-dark);
+    }
+
+    body::before {
+      content: "";
+      background: url(#{$wallpaper-dark}) no-repeat center center/cover;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+    }
+  }
+
   @media screen and (min-width: $no-gap-breakpoint) {
 
     body,
