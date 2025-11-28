@@ -2,8 +2,6 @@
 
 @mixin transparent-background(
   $wallpaper,
-  $ui-base-color,
-  $ui-highlight-color,
   $no-gap-breakpoint
 ) {
   .transparent-bg {
@@ -37,7 +35,7 @@
   .compose-form {
 
     &__highlightable {
-      background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
+      background: rgba(9, 9, 12, 0.7);
     }
 
     .autosuggest-textarea__textarea,
@@ -51,7 +49,7 @@
   }
 
   .search__input {
-    background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
+    background: rgba(9, 9, 12, 0.7);
   }
 
   @media screen and (max-width: #{ $no-gap-breakpoint - 1 }) {
