@@ -4,14 +4,10 @@
 
 @mixin apply-crazynewworld-theme(
   $wallpaper,
-  $ui-base-color,
-  $ui-highlight-color,
   $no-gap-breakpoint
 ) {
   @include tp.transparent-background(
     $wallpaper,
-    $ui-base-color,
-    $ui-highlight-color,
     $no-gap-breakpoint
   );
 }
