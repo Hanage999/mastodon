@@ -3,19 +3,10 @@
 @mixin transparent-background(
   $wallpaper-dark,
   $wallpaper,
-<<<<<<< HEAD
   $mobile-breakpoint
 ) {
   .transparent-bg {
     background: url($wallpaper-dark) no-repeat fixed center top/cover;
-=======
-  $ui-base-color,
-  $ui-highlight-color,
-  $no-gap-breakpoint
-) {
-  .transparent-bg {
-    background: url(#{$wallpaper-dark}) no-repeat fixed center top/cover;
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
   }
 
   /* 半透明デザイン */
@@ -27,13 +18,10 @@
   .admin-wrapper .sidebar-wrapper__inner,
   .tabs-bar__wrapper {
     background: url($wallpaper-dark) no-repeat fixed center top/cover;
-<<<<<<< HEAD
   }
 
   .columns-area__panels__main {
     background: none;
-=======
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
   }
 
   .drawer__inner {
@@ -51,11 +39,7 @@
   .compose-form {
 
     &__highlightable {
-<<<<<<< HEAD
       background: rgba(9, 9, 12, 0.7);
-=======
-      background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
     }
 
     .autosuggest-textarea__textarea,
@@ -69,7 +53,6 @@
   }
 
   .search__input {
-<<<<<<< HEAD
     background: rgba(9, 9, 12, 0.7);
   }
 
@@ -119,48 +102,9 @@
     .search-results__section__header {
       background: none;
       backdrop-filter: var(--background-filter-darker);
-=======
-    background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.7);
-  }
-
-  @media screen and (max-width: #{ $no-gap-breakpoint - 1 }) {
-    body {
-      background: none;
-      position: relative;
-    }
-
-    .layout-single-column .ui__header,
-    .admin-wrapper .sidebar__toggle {
-      background: none;
-      backdrop-filter: var(--background-filter-darker);
-    }
-
-    .tabs-bar__wrapper {
-      background: none;
-      backdrop-filter: var(--background-filter-dark);
-    }
-
-    body::before {
-      content: "";
-      background: url(#{$wallpaper-dark}) no-repeat center center/cover;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
     }
   }
 
-  @media screen and (min-width: $no-gap-breakpoint) {
-
-    body,
-    .tabs-bar__wrapper {
-        background: url($wallpaper) no-repeat fixed center top/cover;
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
-    }
-
-<<<<<<< HEAD
   @media screen and (min-width: $mobile-breakpoint) {
 
     body,
@@ -195,35 +139,6 @@
 
     .layout-multiple-columns .column {
 
-=======
-    /* 情報要素の背景を暗くしてブラーを施す */
-
-    .column-header__wrapper,
-    .column-back-button,
-    .navigation-panel,
-    .search__input,
-    .drawer__header,
-    .drawer__inner,
-    .search-results,
-    .link-footer,
-    .getting-started__trends,
-    .server-banner {
-      backdrop-filter: var(--background-filter-dark);
-    }
-
-    .layout-single-column {
-
-      .columns-area--mobile .column,
-      .navigation-bar,
-      .reply-indicator,
-      .compose-form__highlightable {
-        backdrop-filter: var(--background-filter-dark);
-      }
-    }
-
-    .layout-multiple-columns .column {
-
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
       &>.scrollable,
       .column-inline-form,
       .notification__filter-bar,
@@ -249,50 +164,29 @@
       background: none;
     }
 
-<<<<<<< HEAD
-=======
-    .column .link-footer,
-    .navigation-panel .getting-started__trends {
-      backdrop-filter: none;
-    }
-
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
     /* 文字入力フォームの背景を暗く */
 
     .compose-form {
 
       &__highlightable {
-<<<<<<< HEAD
         background: rgba(9, 9, 12, 0.5);
-=======
-        background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.5);
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
       }
     }
 
     .search__input {
-<<<<<<< HEAD
       background: rgba(9, 9, 12, 0.5);
-=======
-      background: rgba(color.adjust($ui-base-color, $lightness: -15%), 0.5);
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
     }
 
     /* 意味のある色変更 */
 
     .column-subheading {
-<<<<<<< HEAD
       background: rgba(73, 73, 101, 0.3);
-=======
-      background: rgba(color.adjust($ui-base-color, $lightness: 15%), 0.3);
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
     }
 
     .detailed-status__wrapper-direct {
 
       .detailed-status,
       .detailed-status__action-bar {
-<<<<<<< HEAD
         background: rgba(44, 44, 66, 0.6);
       }
     }
@@ -302,12 +196,6 @@
       backdrop-filter: none;
     }
 
-=======
-        background: rgba(color.mix($ui-base-color, $ui-highlight-color, 95%), 0.6);
-      }
-    }
-
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
     /* 角を取る */
 
     .navigation-panel,
@@ -353,11 +241,7 @@
     }
 
     .reply-indicator__line::before {
-<<<<<<< HEAD
       background: rgb(193, 193, 210);
-=======
-      background: color.adjust($ui-base-color, $lightness: 60%);
->>>>>>> 896ffc4302 (Conform to new SCSS standard)
       box-shadow: 2px 2px 2px black;
     }
 
