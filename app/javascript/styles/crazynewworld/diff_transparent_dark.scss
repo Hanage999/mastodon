@@ -4,10 +4,10 @@
 
 @mixin apply-crazynewworld-theme(
   $wallpaper,
-  $no-gap-breakpoint
+  $mobile-menu-breakpoint
 ) {
   @include tp.transparent-background(
     $wallpaper,
-    $no-gap-breakpoint
+    $mobile-menu-breakpoint
   );
 }
