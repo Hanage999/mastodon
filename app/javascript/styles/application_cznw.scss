@@ -1,0 +1,17 @@
+@use 'mastodon/theme/dark' as dark;
+@use 'mastodon/theme/utils' as utils;
+
+@use 'common';
+
+/* 強制ダークモード */
+[data-color-scheme='light'] {
+    color-scheme: dark;
+
+    @include dark.tokens;
+    @include utils.invert-on-dark;
+
+    &[data-contrast='high'],
+    [data-contrast='high'] & {
+        @include dark.contrast-overrides;
+    }
+}
