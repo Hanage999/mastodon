@@ -6,11 +6,11 @@
 @mixin apply-crazynewworld-theme(
   $wallpaper-dark,
   $wallpaper,
-  $no-gap-breakpoint
+  $mobile-menu-breakpoint
 ) {
   @include tp.transparent-background(
     $wallpaper-dark,
     $wallpaper,
-    $no-gap-breakpoint
+    $mobile-menu-breakpoint
   );
 }
