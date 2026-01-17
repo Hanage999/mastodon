@@ -2,7 +2,7 @@
 
 @mixin transparent-background(
   $wallpaper,
-  $no-gap-breakpoint
+  $mobile-menu-breakpoint
 ) {
   .transparent-bg {
     background: url(#{$wallpaper}) no-repeat fixed center top/cover;
@@ -18,6 +18,10 @@
   body.admin,
   .admin-wrapper .sidebar-wrapper__inner {
     background: url($wallpaper) no-repeat fixed center top/cover;
+  }
+
+  .columns-area__panels__main {
+    background: none;
   }
 
   .drawer__inner {
@@ -52,7 +56,12 @@
     background: rgba(9, 9, 12, 0.7);
   }
 
-  @media screen and (max-width: #{ $no-gap-breakpoint - 1 }) {
+  .ui__navigation-bar {
+    background: none;
+    backdrop-filter: var(--background-filter-dark);
+  }
+
+  @media screen and (max-width: #{ $mobile-menu-breakpoint - 1 }) {
     body {
       background: none;
       position: relative;
@@ -78,6 +87,11 @@
       width: 100vw;
       height: 100vh;
       z-index: -1;
+    }
+
+    .columns-area__panels__pane--navigational .columns-area__panels__pane__inner {
+      background: none;
+      backdrop-filter: var(--background-filter-dark);
     }
   }
 }
