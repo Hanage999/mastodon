@@ -5,4 +5,4 @@
 $wallpaper: "crazynewworld/sakura.jpg";
 $wallpaper-dark: "crazynewworld/sakura-dark.jpg";
 
-@include diff.apply-crazynewworld-theme($wallpaper-dark, $wallpaper, $no-gap-breakpoint);
+@include diff.apply-crazynewworld-theme($wallpaper-dark, $wallpaper, $mobile-menu-breakpoint);
