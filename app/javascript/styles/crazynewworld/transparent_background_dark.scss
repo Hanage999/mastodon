@@ -56,7 +56,15 @@
     background: rgba(9, 9, 12, 0.7);
   }
 
+  .search-results__section__header {
+    background: none;
+    backdrop-filter: var(--background-filter-darker);
+  }
+
+  /* モーダル等 */
+
   .ui__navigation-bar,
+  .search__popout,
   .dropdown-menu,
   .interaction-modal,
   .boost-modal,
@@ -67,21 +75,14 @@
     backdrop-filter: var(--background-filter-dark);
   }
 
+  .search.active .search__popout {
+    background: var(--color-bg-overlay);
+  }
+
   @media screen and (max-width: #{ $mobile-menu-breakpoint - 1 }) {
     body {
       background: none;
       position: relative;
-    }
-
-    .layout-single-column .ui__header,
-    .admin-wrapper .sidebar__toggle {
-      background: none;
-      backdrop-filter: var(--background-filter-darker);
-    }
-
-    .tabs-bar__wrapper {
-      background: none;
-      backdrop-filter: var(--background-filter-dark);
     }
 
     body::before {
@@ -95,9 +96,12 @@
       z-index: -1;
     }
 
+    .layout-single-column .ui__header,
+    .admin-wrapper .sidebar__toggle,
+    .tabs-bar__wrapper,
     .columns-area__panels__pane--navigational .columns-area__panels__pane__inner {
       background: none;
-      backdrop-filter: var(--background-filter-dark);
+      backdrop-filter: var(--background-filter-darker);
     }
   }
 }
