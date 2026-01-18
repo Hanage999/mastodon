@@ -61,6 +61,14 @@
     backdrop-filter: var(--background-filter-dark);
   }
 
+  .dropdown-menu {
+    background: none;
+  }
+
+  .interaction-modal {
+    background: none;
+  }
+
   @media screen and (max-width: #{ $mobile-menu-breakpoint - 1 }) {
     body {
       background: none;
