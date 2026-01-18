@@ -56,17 +56,15 @@
     background: rgba(9, 9, 12, 0.7);
   }
 
-  .ui__navigation-bar {
+  .ui__navigation-bar,
+  .dropdown-menu,
+  .interaction-modal,
+  .boost-modal,
+  .report-modal,
+  .actions-modal,
+  .compare-history-modal {
     background: none;
     backdrop-filter: var(--background-filter-dark);
-  }
-
-  .dropdown-menu {
-    background: none;
-  }
-
-  .interaction-modal {
-    background: none;
   }
 
   @media screen and (max-width: #{ $mobile-menu-breakpoint - 1 }) {
