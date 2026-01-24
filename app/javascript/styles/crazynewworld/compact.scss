@@ -1,8 +1,24 @@
-/* 通知を一番左の列に組み込み */
+/* 一番左の列を２行にした4列レイアウト */
 
 @mixin compact(
-  $no-gap-breakpoint,
+  $no-gap-breakpoint
 ) {
+
+  .layout-multiple-columns {
+    .link-footer {
+      margin-bottom: 0;
+    }
+
+    .navigation-panel {
+      margin-top: 0;
+    }
+
+    .app-holder,
+    .app-holder > div {
+      align-items: initial;
+    }
+  }
+  
   @media screen and (min-width: $no-gap-breakpoint) {
 
     .drawer {
@@ -15,21 +31,18 @@
       flex: auto !important;
     }
 
-    .column:nth-child(3) {
+    .column:nth-child(2) {
       position: fixed !important;
-      margin-top: 500px !important;
       padding-left: 10px !important;
-      height: calc(100% - 500px) !important;
       left: 0px !important;
       width: 25% !important;
+      top: 500px !important;
+      bottom: 0 !important;
     }
 
-    .column:nth-child(3) + div .mastodon-column-container {
-      height: auto !important;
-    }
-
-    div.column-icon.collapsable + div {
-      overflow: scroll !important;
+    .column:nth-child(2) .column-header__collapsible {
+      max-height: 200px;
+      overflow-y: auto;
     }
   }
 }
