@@ -4,4 +4,4 @@
 
 $wallpaper: "crazynewworld/shouwa-dark.jpg";
 
-@include diff.apply-crazynewworld-theme($wallpaper, $mobile-menu-breakpoint);
+@include diff.apply-crazynewworld-theme($wallpaper, $no-gap-breakpoint, $mobile-breakpoint);
