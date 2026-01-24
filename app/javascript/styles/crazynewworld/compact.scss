@@ -1,32 +1,35 @@
 /* 通知を一番左の列に組み込み */
 
-@media screen and (min-width:741px) {
-    
-  .drawer {
+@mixin compact(
+  $no-gap-breakpoint,
+) {
+  @media screen and (min-width: $no-gap-breakpoint) {
+
+    .drawer {
       width: 25% !important;
       height: 510px !important;
       overflow: visible !important;
-  }
+    }
 
-  .column {
+    .column {
       flex: auto !important;
-  }
+    }
 
-  .column:nth-child(3) {
+    .column:nth-child(3) {
       position: fixed !important;
       margin-top: 500px !important;
       padding-left: 10px !important;
       height: calc(100% - 500px) !important;
       left: 0px !important;
       width: 25% !important;
-  }
+    }
 
-  .column:nth-child(3) + div .mastodon-column-container {
+    .column:nth-child(3) + div .mastodon-column-container {
       height: auto !important;
-  }
+    }
 
-  div.column-icon.collapsable + div {
+    div.column-icon.collapsable + div {
       overflow: scroll !important;
+    }
   }
-
 }
