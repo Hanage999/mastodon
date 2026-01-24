@@ -2,10 +2,10 @@
 
 @mixin transparent-background(
   $wallpaper,
-  $mobile-menu-breakpoint
+  $mobile-breakpoint
 ) {
   .transparent-bg {
-    background: url(#{$wallpaper}) no-repeat fixed center top/cover;
+    background: url($wallpaper) no-repeat fixed center top/cover;
   }
 
   /* 半透明デザイン */
@@ -79,7 +79,7 @@
     background: var(--color-bg-overlay);
   }
 
-  @media screen and (max-width: #{ $mobile-menu-breakpoint - 1 }) {
+  @media screen and (max-width: #{ $mobile-breakpoint - 1 }) {
     body {
       background: none;
       position: relative;
