@@ -1,14 +1,18 @@
 /* 新・半透明＋カラム幅広 */
 
 @use './transparent_background_dark' as tp;
-@use './compact';
+@use './compact' as cmp;
 
 @mixin apply-crazynewworld-theme(
   $wallpaper,
-  $mobile-menu-breakpoint
+  $no-gap-breakpoint,
+  $mobile-breakpoint
 ) {
   @include tp.transparent-background(
     $wallpaper,
-    $mobile-menu-breakpoint
+    $mobile-breakpoint
+  );
+  @include cmp.compact(
+    $no-gap-breakpoint
   );
 }
