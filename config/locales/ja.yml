@@ -1916,10 +1916,7 @@ ja:
     review_link: 利用規約を確認する
     title: "%{domain} の利用規約が変更されています"
   themes:
-    contrast: Mastodon (ハイコントラスト)
-    default: Mastodon (ダーク)
-    mastodon-light: Mastodon (ライト)
-    system: 自動 (システムのテーマを使用)
+    default: Mastodon（デフォルト）
     mastodon-green: Mastodon (緑)
     mastodon-blue: Mastodon (青)
     green: Crazynewworld (緑)
