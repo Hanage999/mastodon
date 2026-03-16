@@ -61,6 +61,10 @@
     backdrop-filter: var(--background-filter-darker);
   }
 
+  .with-zig-zag-decoration:after {
+    background-color: rgba(0, 0, 0, 0);
+  }
+
   /* モーダル等 */
 
   .ui__navigation-bar,
@@ -73,6 +77,11 @@
   .compare-history-modal {
     background: none;
     backdrop-filter: var(--background-filter-dark);
+  }
+
+  .safety-action-modal__top,
+  .safety-action-modal__bottom {
+    background: none;
   }
 
   .search.active .search__popout {
