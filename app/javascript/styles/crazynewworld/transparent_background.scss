@@ -60,6 +60,18 @@
     background-color: rgba(0,0,0,0);
   }
 
+  .status__wrapper-direct,
+  .notification-ungrouped--direct,
+  .notification-group--direct,
+  .notification-group--annual-report {
+    background: rgba(38, 30, 72, 0.7);
+  }
+
+  .detailed-status__wrapper-direct .detailed-status,
+  .detailed-status__wrapper-direct .detailed-status__action-bar {
+    background: rgba(38, 30, 72, 0.7);
+  }
+
   /* モーダル等 */
 
   .ui__navigation-bar,
