@@ -4,9 +4,9 @@
 @use 'fonts/roboto-mono';
 
 @use 'mastodon/reset';
-@use 'mastodon/theme';
-@use 'mastodon/theme/dark' as dark;
-@use 'mastodon/theme/utils' as utils;
+@use 'mastodon/tokens';
+@use 'mastodon/tokens/theme/dark' as dark;
+@use 'mastodon/tokens/theme/utils' as utils;
 @use 'mastodon/basics';
 @use 'mastodon/branding';
 @use 'mastodon/containers';
@@ -27,13 +27,13 @@
 
 /* 強制ダークモード */
 [data-color-scheme='light'] {
-    color-scheme: dark;
+  color-scheme: dark;
 
-    @include dark.tokens;
-    @include utils.invert-on-dark;
+  @include dark.tokens;
+  @include utils.invert-on-dark;
 
-    &[data-contrast='high'],
-    [data-contrast='high'] & {
-        @include dark.contrast-overrides;
-    }
+  &[data-contrast='high'],
+  [data-contrast='high'] & {
+    @include dark.contrast-overrides;
+  }
 }
