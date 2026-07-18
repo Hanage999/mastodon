@@ -1,9 +1,6 @@
 /* 一番左の列を２行にした4列レイアウト */
 
-@mixin compact(
-  $no-gap-breakpoint
-) {
-
+@mixin compact($no-gap-breakpoint) {
   .layout-multiple-columns {
     .link-footer {
       margin-bottom: 0;
@@ -18,9 +15,8 @@
       align-items: initial;
     }
   }
-  
-  @media screen and (min-width: $no-gap-breakpoint) {
 
+  @media screen and (min-width: $no-gap-breakpoint) {
     .drawer {
       width: 25% !important;
       height: 510px !important;
@@ -34,7 +30,7 @@
     .column:nth-child(2) {
       position: fixed !important;
       padding-left: 10px !important;
-      left: 0px !important;
+      left: 0 !important;
       width: 25% !important;
       top: 500px !important;
       bottom: 0 !important;
