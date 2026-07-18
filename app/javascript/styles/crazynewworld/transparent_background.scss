@@ -1,10 +1,6 @@
-@use "sass:color";
+@use 'sass:color';
 
-@mixin transparent-background(
-  $wallpaper-dark,
-  $wallpaper,
-  $mobile-breakpoint
-) {
+@mixin transparent-background($wallpaper-dark, $wallpaper, $mobile-breakpoint) {
   .transparent-bg {
     background: url($wallpaper-dark) no-repeat fixed center top/cover;
   }
@@ -37,9 +33,8 @@
   }
 
   .compose-form {
-
     &__highlightable {
-      background: rgba(9, 9, 12, 0.7);
+      background: rgba(9, 9, 12, 70%);
     }
 
     .autosuggest-textarea__textarea,
@@ -53,23 +48,23 @@
   }
 
   .search__input {
-    background: rgba(9, 9, 12, 0.7);
+    background: rgba(9, 9, 12, 70%);
   }
 
-  .with-zig-zag-decoration:after {
-    background-color: rgba(0,0,0,0);
+  .with-zig-zag-decoration::after {
+    background-color: rgba(0, 0, 0, 0%);
   }
 
   .status__wrapper-direct,
   .notification-ungrouped--direct,
   .notification-group--direct,
   .notification-group--annual-report {
-    background: rgba(38, 30, 72, 0.7);
+    background: rgba(38, 30, 72, 70%);
   }
 
   .detailed-status__wrapper-direct .detailed-status,
   .detailed-status__wrapper-direct .detailed-status__action-bar {
-    background: rgba(38, 30, 72, 0.7);
+    background: rgba(38, 30, 72, 70%);
   }
 
   /* モーダル等 */
@@ -102,7 +97,7 @@
     }
 
     body::before {
-      content: "";
+      content: '';
       background: url($wallpaper-dark) no-repeat center center/cover;
       position: fixed;
       top: 0;
@@ -115,7 +110,8 @@
     .layout-single-column .ui__header,
     .admin-wrapper .sidebar__toggle,
     .tabs-bar__wrapper,
-    .columns-area__panels__pane--navigational .columns-area__panels__pane__inner {
+    .columns-area__panels__pane--navigational
+      .columns-area__panels__pane__inner {
       background: none;
       backdrop-filter: var(--background-filter-dark);
     }
@@ -127,10 +123,9 @@
   }
 
   @media screen and (min-width: $mobile-breakpoint) {
-
     body,
     .tabs-bar__wrapper {
-        background: url($wallpaper) no-repeat fixed center top/cover;
+      background: url($wallpaper) no-repeat fixed center top/cover;
     }
 
     /* 情報要素の背景を暗くしてブラーを施す */
@@ -149,7 +144,6 @@
     }
 
     .layout-single-column {
-
       .columns-area--mobile .column,
       .navigation-bar,
       .reply-indicator,
@@ -159,8 +153,7 @@
     }
 
     .layout-multiple-columns .column {
-
-      &>.scrollable,
+      & > .scrollable,
       .column-inline-form,
       .notification__filter-bar,
       .account__section-headline,
@@ -171,7 +164,6 @@
     }
 
     .drawer__inner {
-
       .search-results {
         background: none;
       }
@@ -188,32 +180,30 @@
     /* 文字入力フォームの背景を暗く */
 
     .compose-form {
-
       &__highlightable {
-        background: rgba(9, 9, 12, 0.5);
+        background: rgba(9, 9, 12, 50%);
       }
     }
 
     .search__input {
-      background: rgba(9, 9, 12, 0.5);
+      background: rgba(9, 9, 12, 50%);
     }
 
     /* 意味のある色変更 */
 
     .column-subheading {
-      background: rgba(73, 73, 101, 0.3);
+      background: rgba(73, 73, 101, 30%);
     }
 
     .detailed-status__wrapper-direct {
-
       .detailed-status,
       .detailed-status__action-bar {
-        background: rgba(44, 44, 66, 0.6);
+        background: rgba(44, 44, 66, 60%);
       }
     }
 
     .search-results__section__header {
-      background: rgba(0, 0, 0, 0.4);
+      background: rgba(0, 0, 0, 40%);
       backdrop-filter: none;
     }
 
@@ -226,23 +216,21 @@
     .server-banner,
     .layout-single-column .reply-indicator {
       border-radius: 4px;
-    };
+    }
 
     .column-header__wrapper {
-      border-radius: 4px 4px 0px 0px;
+      border-radius: 4px 4px 0 0;
     }
 
     /* シングルカラムUIの調整 */
 
     .layout-single-column {
-
       .navigation-bar,
       .reply-indicator {
         padding: 3px 3px 3px 5px;
       }
 
       .column {
-
         .navigation-bar,
         .reply-indicator {
           padding: 0;
@@ -277,6 +265,8 @@
 /* 変数の追加 */
 
 :root {
-  --background-filter-dark: blur(10px) saturate(180%) contrast(75%) brightness(30%);
-  --background-filter-darker: blur(10px) saturate(180%) contrast(75%) brightness(15%);
+  --background-filter-dark: blur(10px) saturate(180%) contrast(75%)
+    brightness(30%);
+  --background-filter-darker: blur(10px) saturate(180%) contrast(75%)
+    brightness(15%);
 }
