@@ -1,6 +1,8 @@
 /* 一番左の列を２行にした4列レイアウト */
 
-@mixin compact($no-gap-breakpoint) {
+@use '../mastodon/variables' as *;
+
+@mixin apply {
   .layout-multiple-columns {
     .link-footer {
       margin-bottom: 0;
