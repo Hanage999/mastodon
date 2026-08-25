@@ -2220,6 +2220,19 @@ en:
     title: The terms of service of %{domain} are changing
   themes:
     default: Mastodon
+    default: Mastodon（default）
+    mastodon-green: Mastodon (green)
+    mastodon-blue: Mastodon (blue)
+    green: Crazynewworld (green)
+    blue: Crazynewworld (blue)
+    sakura: Crazynewworld (sakura)
+    shouwa: Crazynewworld (shouwa)
+    tricolor: Crazynewworld (tricolor)
+    green-dark: Crazynewworld (green dark)
+    blue-dark: Crazynewworld (blue dark)
+    sakura-dark: Crazynewworld (sakura dark)
+    shouwa-dark: Crazynewworld (shouwa dark)
+    tricolor-dark: Crazynewworld (tricolor dark)
   time:
     formats:
       default: "%b %d, %Y, %H:%M"
