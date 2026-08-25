@@ -1,0 +1,10 @@
+@use './transparent_background' as transparent;
+@use './compact';
+
+@mixin apply($wallpaper-dark, $wallpaper: null, $compact-layout: true) {
+  @include transparent.apply($wallpaper-dark, $wallpaper);
+
+  @if $compact-layout {
+    @include compact.apply;
+  }
+}
