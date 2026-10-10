@@ -6,11 +6,12 @@
 [data-color-scheme='light'] {
   color-scheme: dark;
 
+  @include dark.base-indigo;
   @include dark.tokens;
   @include utils.invert-on-dark;
 
   &[data-contrast='high'],
   [data-contrast='high'] & {
-    @include dark.contrast-overrides;
+    @include dark.base-indigo-contrast;
   }
 }
