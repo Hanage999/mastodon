@@ -10,8 +10,19 @@
   @include dark.tokens;
   @include utils.invert-on-dark;
 
-  &[data-contrast='high'],
-  [data-contrast='high'] & {
-    @include dark.base-indigo-contrast;
+  &[data-theme-color='lime'] {
+    @include dark.base-lime;
+  }
+
+  &[data-theme-color='pink'] {
+    @include dark.base-pink;
+  }
+
+  &[data-theme-color='orange'] {
+    @include dark.base-orange;
+  }
+
+  &[data-theme-color='cyan'] {
+    @include dark.base-cyan;
   }
 }
