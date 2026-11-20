@@ -1,4 +1,5 @@
-// Crazynewworld: on the appearance settings page, follow the selected theme:
+// Crazynewworld: on the appearance settings pages (the user's and the admin's
+// site defaults), follow the selected theme:
 // - offer the wallpapers the theme lists in config/themes.yml (`wallpapers:`)
 // - hide the color scheme ("Mode") choice when the theme forces one
 //   (`color_scheme:`); the user's saved choice is kept and applies again
@@ -31,7 +32,7 @@ const updateColorScheme = (form: HTMLFormElement, option: HTMLOptionElement) => 
 
 const updateWallpapers = (form: HTMLFormElement, option: HTMLOptionElement) => {
   const wrapper = form.querySelector<HTMLDivElement>(
-    '.user_settings_web\\.wallpaper .label_input__wrapper',
+    '.user_settings_web\\.wallpaper .label_input__wrapper, .form_admin_settings_wallpaper .label_input__wrapper',
   );
   const container = wrapper?.closest<HTMLElement>('.horizontal-options');
   if (!wrapper || !container) return;
@@ -41,6 +42,9 @@ const updateWallpapers = (form: HTMLFormElement, option: HTMLOptionElement) => {
   if (!hiddenInput) return;
 
   const inputName = hiddenInput.name;
+  const idPrefix = wrapper.closest('.form_admin_settings_wallpaper')
+    ? 'form_admin_settings_wallpaper'
+    : 'user_settings_attributes_web.wallpaper';
   const selected = form.querySelector<HTMLInputElement>(
     `input[name="${inputName}"]:checked`,
   )?.value;
@@ -65,7 +69,7 @@ const updateWallpapers = (form: HTMLFormElement, option: HTMLOptionElement) => {
     input.type = 'radio';
     input.value = wallpaper;
     input.name = inputName;
-    input.id = `user_settings_attributes_web.wallpaper_${wallpaper}`;
+    input.id = `${idPrefix}_${wallpaper}`;
     input.checked = wallpaper === selected;
 
     label.htmlFor = input.id;

@@ -99,7 +99,15 @@ module ThemeHelper
     user_wallpaper = current_user&.setting_wallpaper
     return user_wallpaper if user_wallpaper && available_wallpapers.include?(user_wallpaper)
 
-    available_wallpapers.first
+    site_wallpaper(theme)
+  end
+
+  # Crazynewworld: the site default wallpaper (admin appearance settings)
+  def site_wallpaper(theme)
+    available_wallpapers = Themes.instance.available_wallpapers(theme)
+    return if available_wallpapers.empty?
+
+    Setting.wallpaper.presence_in(available_wallpapers) || available_wallpapers.first
   end
 
   private
