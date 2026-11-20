@@ -63,7 +63,7 @@ module ThemeHelper
   end
 
   def color_scheme
-    current_user&.setting_color_scheme || 'auto'
+    Themes.instance.forced_color_scheme(current_theme) || current_user&.setting_color_scheme || 'auto'
   end
 
   def contrast
@@ -89,6 +89,17 @@ module ThemeHelper
 
   def page_theme_color(theme)
     content_for(:force_theme_color).presence || theme_color(theme)
+  end
+
+  # Crazynewworld: the wallpaper for themes that offer a choice of wallpapers
+  def wallpaper(theme)
+    available_wallpapers = Themes.instance.available_wallpapers(theme)
+    return if available_wallpapers.empty?
+
+    user_wallpaper = current_user&.setting_wallpaper
+    return user_wallpaper if user_wallpaper && available_wallpapers.include?(user_wallpaper)
+
+    available_wallpapers.first
   end
 
   private

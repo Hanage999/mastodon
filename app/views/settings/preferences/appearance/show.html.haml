@@ -32,7 +32,7 @@
                    wrapper: :with_label,
                    required: false
 
-      .input.horizontal-options
+      .input.horizontal-options{ hidden: Themes.instance.forced_color_scheme(current_theme).present? }
         = ff.input :'web.color_scheme',
                    as: :radio_buttons,
                    collection: user_settings_collection('web.color_scheme'),
@@ -49,6 +49,17 @@
                    include_blank: false,
                    label_method: ->(color) { I18n.t("color_theme.#{color}", default: color) },
                    label: I18n.t('simple_form.labels.defaults.setting_theme_color'),
+                   wrapper: :with_label,
+                   required: false
+      .input.horizontal-options{ hidden: Themes.instance.available_wallpapers(current_theme).empty? }
+        = ff.input :'web.wallpaper',
+                   as: :radio_buttons,
+                   collection: Themes.instance.available_wallpapers(current_theme).presence || [current_user.setting_wallpaper].compact,
+                   checked: wallpaper(current_theme) || current_user.setting_wallpaper,
+                   hint: false,
+                   include_blank: false,
+                   label_method: ->(wallpaper) { I18n.t("wallpapers.#{wallpaper}", default: wallpaper) },
+                   label: I18n.t('simple_form.labels.defaults.setting_wallpaper'),
                    wrapper: :with_label,
                    required: false
       .input.horizontal-options

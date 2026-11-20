@@ -1,0 +1,202 @@
+// Translucent surfaces over the wallpaper (--cznw-wallpaper, set in
+// styles/crazynewworld.scss). Ported from the admin custom CSS that
+// mastodon.crazynewworld.net used before this theme existed.
+//
+// Gotchas:
+// - CSS-module class names (`_comp_…`, `_feat_…`) are built from file paths
+//   (generateScopedName in vite.config.mts) and change when upstream moves
+//   a file. After merging upstream, check that they all still exist.
+// - CSS-module chunks load after this stylesheet, so a rule with the same
+//   specificity loses. Every override therefore starts with `html `.
+// - An element with backdrop-filter becomes a backdrop root: a blurred popout
+//   inside it only sees that element's own content. So never blur an
+//   ancestor of a popout (e.g. the column header root); blur a pseudo-element
+//   or a sibling instead.
+
+@mixin surface-blur {
+  backdrop-filter: var(--cznw-surface-filter);
+}
+
+@mixin wallpaper($attachment: fixed) {
+  background: var(--cznw-wallpaper) no-repeat $attachment center top / cover;
+}
+
+// Tokens
+
+html[data-color-scheme='dark'],
+html:not([data-color-scheme]) {
+  --color-bg-primary: rgb(from var(--base-color-bg) r g b / 55%);
+  --color-bg-desktop: transparent;
+  --base-border-column-strength: 30%;
+  --cznw-surface-filter: blur(10px) brightness(70%);
+}
+
+// Wallpaper. `body.admin` (settings and admin pages) has its own background
+// upstream, so it is listed explicitly.
+
+body,
+body.admin {
+  @include wallpaper;
+}
+
+// iOS ignores `background-attachment: fixed`, so the wallpaper goes on a fixed
+// pseudo-element instead. 100lvh keeps it covering the screen while the
+// browser bars collapse.
+@supports (-webkit-touch-callout: none) {
+  body,
+  body.admin {
+    background: none;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100lvh;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--cznw-wallpaper) no-repeat center / cover;
+  }
+}
+
+// Web UI: columns
+
+html ._comp_columns_area__main,
+html .layout-multiple-columns ._comp_column__root {
+  background: transparent;
+}
+
+// Web UI: sticky column header. The root repeats the fixed wallpaper so the
+// header is opaque; the layout inside it is transparent and blurred.
+
+html ._comp_column_header__root {
+  @include wallpaper;
+}
+
+html ._comp_column_header__layout {
+  background: transparent;
+
+  @include surface-blur;
+}
+
+@media (width <= 760px) {
+  html ._comp_column_header__root {
+    background: transparent;
+  }
+}
+
+@supports (-webkit-touch-callout: none) {
+  html ._comp_column_header__root {
+    background: transparent;
+  }
+}
+
+// Header decorations: clip the scrolled-down shadow and the new-post glow so
+// they don't darken the wallpaper.
+html ._comp_column_header__root::after {
+  background: transparent;
+  clip-path: inset(100% 0 -16px 0);
+}
+
+html ._comp_column_header__root::before {
+  clip-path: inset(50% 0 0 0);
+}
+
+// The strip below the title (the search box on the search results page).
+// Its blur sits on a pseudo-element so the search dropdown, which is inside
+// the strip, can still blur the timeline.
+html ._comp_column_header__extraStickyContent {
+  position: relative;
+  isolation: isolate;
+  background: transparent;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: var(--color-bg-primary);
+
+    @include surface-blur;
+  }
+}
+
+// Web UI: mobile navigation
+
+html ._feat_navigation_panel_mobile_nav__floatingCard {
+  background-color: transparent;
+
+  @include surface-blur;
+
+  // Thinner than upstream (about 83px instead of 99px on iPhone, like the iOS
+  // tab bar): upstream stacks 8px on top of the safe area.
+  padding-top: 4px;
+  padding-bottom: max(4px, env(safe-area-inset-bottom));
+
+  ._feat_navigation_panel_navigation_link__linkMini {
+    min-height: 44px;
+    padding-block: 10px;
+  }
+}
+
+// Popouts, menus, modals and other surfaces that float over the wallpaper or
+// the timeline with a translucent --color-bg-primary background.
+
+html ._feat_navigation_panel_mobile_nav__slideOut,
+html ._comp_menu__card,
+html .dropdown-menu,
+html .search__popout,
+html ._feat_compose__root,
+html ._feat_compose_trigger__composerMinimized,
+html ._comp_bottom_sheet__sheet,
+html ._comp_modal_shell_redesign__modal,
+html .safety-action-modal__top,
+html .safety-action-modal__bottom,
+html .compare-history-modal,
+html .report-dialog-modal,
+html .privacy-dropdown__dropdown,
+html .info-tooltip,
+html ._comp_account_header__handleHelp,
+html ._feat_account_timeline__filterOverlay,
+html ._comp_form_fields_combobox__listBoxWrapper,
+html ._comp_emoji_picker__modifiersMenu {
+  @include surface-blur;
+}
+
+// Settings and admin pages
+
+html .admin-wrapper .content-wrapper {
+  background: transparent;
+}
+
+html .batch-table__toolbar,
+html .admin-wrapper .sidebar > nav > ul.visible {
+  @include surface-blur;
+}
+
+// Sign-in and other auth pages, and the OAuth authorization pages: put the
+// form on a translucent panel.
+
+html .form-container {
+  box-sizing: border-box;
+  padding: 32px;
+  background: var(--color-bg-primary);
+  border: var(--border-column);
+  border-radius: var(--radius-6);
+
+  @include surface-blur;
+
+  @media (width <= 740px) {
+    margin-inline: 16px;
+    padding: 20px;
+  }
+
+  // The "Log in to <long host name>" heading overflows on phones.
+  h1,
+  h2 {
+    overflow-wrap: anywhere;
+  }
+}
