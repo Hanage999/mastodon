@@ -51,6 +51,7 @@ class Form::AdminSettings
     opt_in_server_recommendation
     postpone_confirmation_emails
     theme_color
+    wallpaper
     custom_robots
     override_robots
   ).freeze

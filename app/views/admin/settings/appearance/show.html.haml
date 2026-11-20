@@ -27,6 +27,16 @@
                 wrapper: :with_label,
                 required: false
 
+    .input.horizontal-options{ hidden: Themes.instance.available_wallpapers(f.object.theme).empty? }
+      = f.input :wallpaper,
+                as: :radio_buttons,
+                collection: Themes.instance.available_wallpapers(f.object.theme).presence || [f.object.wallpaper].compact_blank,
+                checked: site_wallpaper(f.object.theme) || f.object.wallpaper,
+                include_blank: false,
+                label_method: ->(wallpaper) { I18n.t("wallpapers.#{wallpaper}", default: wallpaper) },
+                wrapper: :with_label,
+                required: false
+
   .fields-group
     = f.input :custom_css,
               as: :text,
