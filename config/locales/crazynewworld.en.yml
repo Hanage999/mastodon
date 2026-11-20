@@ -1,0 +1,15 @@
+---
+# Crazynewworld-specific strings, kept apart from upstream's locale files
+en:
+  simple_form:
+    labels:
+      defaults:
+        setting_wallpaper: Wallpaper
+  themes:
+    crazynewworld: Crazynewworld
+  wallpapers:
+    blue: Blue
+    green: Green
+    sakura: Sakura
+    shouwa: Shouwa
+    tricolor: Tricolor

@@ -1,0 +1,15 @@
+---
+# Crazynewworld 独自の文言（upstream の翻訳ファイルとは分けておく）
+ja:
+  simple_form:
+    labels:
+      defaults:
+        setting_wallpaper: 壁紙
+  themes:
+    crazynewworld: Crazynewworld
+  wallpapers:
+    blue: 青
+    green: 緑
+    sakura: 桜
+    shouwa: 昭和
+    tricolor: 三色
