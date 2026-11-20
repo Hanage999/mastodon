@@ -21,4 +21,18 @@ class Themes
 
     @conf[theme]['colors']
   end
+
+  # Crazynewworld: a theme can force a color scheme ('dark' or 'light')
+  def forced_color_scheme(theme)
+    return unless @conf[theme].is_a?(Hash)
+
+    @conf[theme]['color_scheme'].presence_in(%w(dark light))
+  end
+
+  # Crazynewworld: wallpapers a theme lets users choose from
+  def available_wallpapers(theme)
+    return [] unless @conf[theme].is_a?(Hash) && @conf[theme]['wallpapers'].present?
+
+    @conf[theme]['wallpapers']
+  end
 end

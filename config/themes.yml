@@ -6,3 +6,19 @@ default:
     - pink
     - orange
     - cyan
+crazynewworld:
+  path: styles/crazynewworld.scss
+  colors:
+    - indigo
+    - lime
+    - pink
+    - orange
+    - cyan
+  # Crazynewworld-specific keys (ignored by upstream code)
+  color_scheme: dark
+  wallpapers:
+    - blue
+    - green
+    - sakura
+    - shouwa
+    - tricolor
