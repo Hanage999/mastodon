@@ -12,6 +12,8 @@ module SettingsHelper
         {
           data: {
             colors: available_theme_colors(theme).index_with { |color| I18n.t("color_theme.#{color}", default: color) }.to_json,
+            wallpapers: Themes.instance.available_wallpapers(theme).index_with { |wallpaper| I18n.t("wallpapers.#{wallpaper}", default: wallpaper) }.to_json,
+            forced_color_scheme: Themes.instance.forced_color_scheme(theme),
           },
         },
       ]

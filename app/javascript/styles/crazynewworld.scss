@@ -1,0 +1,35 @@
+// Crazynewworld theme: upstream's default theme, dark only, made translucent
+// over a wallpaper.
+//
+// - Dark only: config/themes.yml sets `color_scheme: dark`, which
+//   ThemeHelper#color_scheme turns into data-color-scheme="dark" on <html>,
+//   whatever the visitor's system or saved "Mode" setting says.
+// - Wallpaper: config/themes.yml lists the choices under `wallpapers:`;
+//   ThemeHelper#wallpaper puts the user's choice in data-wallpaper on <html>.
+// - Theme colors: inherited from upstream (`colors:` in config/themes.yml).
+
+@use 'application';
+@use 'crazynewworld/translucent';
+
+// The wallpaper URLs are written here, in the entry file, so that Vite
+// resolves them relative to this file. Only the selected one is downloaded.
+// The first entry in `wallpapers:` (blue) is the fallback.
+html {
+  --cznw-wallpaper: url('./crazynewworld/blue-dark.jpg');
+}
+
+html[data-wallpaper='green'] {
+  --cznw-wallpaper: url('./crazynewworld/green-dark.jpg');
+}
+
+html[data-wallpaper='sakura'] {
+  --cznw-wallpaper: url('./crazynewworld/sakura-dark.jpg');
+}
+
+html[data-wallpaper='shouwa'] {
+  --cznw-wallpaper: url('./crazynewworld/shouwa-dark.jpg');
+}
+
+html[data-wallpaper='tricolor'] {
+  --cznw-wallpaper: url('./crazynewworld/tricolor-dark.jpg');
+}

@@ -13,6 +13,7 @@ import axios from 'axios';
 import { on } from 'delegated-events';
 import { throttle } from 'lodash';
 
+import { setupCznwAppearanceSettings } from '@/mastodon/crazynewworld/appearance_settings';
 import { determineEmojiMode } from '@/mastodon/features/emoji/mode';
 import { updateHtmlWithEmoji } from '@/mastodon/features/emoji/render';
 import type { InitialState } from '@/mastodon/initial_state';
@@ -188,6 +189,8 @@ async function loaded() {
       '#user_settings_attributes_theme, #form_admin_settings_theme',
     ),
   );
+
+  setupCznwAppearanceSettings();
 
   truncateRuleHints();
 

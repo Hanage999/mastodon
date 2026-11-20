@@ -75,6 +75,10 @@ module User::HasSettings
     settings['web.theme_color']
   end
 
+  def setting_wallpaper
+    settings['web.wallpaper']
+  end
+
   def setting_color_scheme
     settings['web.color_scheme']
   end
