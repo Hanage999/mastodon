@@ -54,8 +54,8 @@
       .input.horizontal-options{ hidden: Themes.instance.available_wallpapers(current_theme).empty? }
         = ff.input :'web.wallpaper',
                    as: :radio_buttons,
-                   collection: Themes.instance.available_wallpapers(current_theme),
-                   checked: wallpaper(current_theme),
+                   collection: Themes.instance.available_wallpapers(current_theme).presence || [current_user.setting_wallpaper].compact,
+                   checked: wallpaper(current_theme) || current_user.setting_wallpaper,
                    hint: false,
                    include_blank: false,
                    label_method: ->(wallpaper) { I18n.t("wallpapers.#{wallpaper}", default: wallpaper) },
