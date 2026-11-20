@@ -47,11 +47,14 @@ const updateWallpapers = (form: HTMLFormElement, option: HTMLOptionElement) => {
 
   const wallpapers = parseWallpapers(option.dataset.wallpapers);
 
+  // A theme without wallpapers only hides the choice, so the saved one is
+  // still submitted and comes back when switching to a theme that has it.
+  container.hidden = Object.keys(wallpapers).length === 0;
+  if (container.hidden) return;
+
   wrapper.querySelectorAll('span.radio').forEach((element) => {
     element.remove();
   });
-
-  container.hidden = Object.keys(wallpapers).length === 0;
 
   for (const [wallpaper, translation] of Object.entries(wallpapers)) {
     const span = document.createElement('span');
