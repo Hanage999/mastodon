@@ -2,7 +2,12 @@
 # Crazynewworld-specific strings, kept apart from upstream's locale files
 en:
   simple_form:
+    hints:
+      form_admin_settings:
+        wallpaper: Used for logged-out visitors and users who have not picked a wallpaper.
     labels:
+      form_admin_settings:
+        wallpaper: Default wallpaper
       defaults:
         setting_wallpaper: Wallpaper
   themes:
