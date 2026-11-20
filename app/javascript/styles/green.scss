@@ -1,7 +1,0 @@
-@use 'application_cznw';
-@use 'crazynewworld/theme' as cznw;
-
-@include cznw.apply(
-  $wallpaper-dark: 'crazynewworld/green-dark.jpg',
-  $wallpaper: 'crazynewworld/green.jpg'
-);
