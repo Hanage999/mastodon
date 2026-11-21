@@ -1,6 +1,5 @@
 // Crazynewworld theme: upstream's default theme, dark only, made translucent
 // over a wallpaper.
-//
 // - Dark only: config/themes.yml sets `color_scheme: dark`, which
 //   ThemeHelper#color_scheme turns into data-color-scheme="dark" on <html>,
 //   whatever the visitor's system or saved "Mode" setting says.
@@ -8,28 +7,23 @@
 //   ThemeHelper#wallpaper puts the user's choice in data-wallpaper on <html>.
 // - Theme colors: inherited from upstream (`colors:` in config/themes.yml).
 
+@use 'sass:list';
 @use 'application';
 @use 'crazynewworld/translucent';
 
-// The wallpaper URLs are written here, in the entry file, so that Vite
-// resolves them relative to this file. Only the selected one is downloaded.
-// The first entry in `wallpapers:` (blue) is the fallback.
+// Keep in sync with `wallpapers:` in config/themes.yml. The first one is the
+// fallback. The URLs are written in this entry file so that Vite resolves
+// them relative to it; only the selected wallpaper is downloaded.
+$wallpapers: 'blue', 'green', 'sakura', 'shouwa', 'tricolor';
+
 html {
-  --cznw-wallpaper: url('./crazynewworld/blue-dark.jpg');
+  --cznw-wallpaper: url('./crazynewworld/#{list.nth($wallpapers, 1)}-dark.jpg');
 }
 
-html[data-wallpaper='green'] {
-  --cznw-wallpaper: url('./crazynewworld/green-dark.jpg');
-}
+@for $i from 2 through list.length($wallpapers) {
+  $wallpaper: list.nth($wallpapers, $i);
 
-html[data-wallpaper='sakura'] {
-  --cznw-wallpaper: url('./crazynewworld/sakura-dark.jpg');
-}
-
-html[data-wallpaper='shouwa'] {
-  --cznw-wallpaper: url('./crazynewworld/shouwa-dark.jpg');
-}
-
-html[data-wallpaper='tricolor'] {
-  --cznw-wallpaper: url('./crazynewworld/tricolor-dark.jpg');
+  html[data-wallpaper='#{$wallpaper}'] {
+    --cznw-wallpaper: url('./crazynewworld/#{$wallpaper}-dark.jpg');
+  }
 }
