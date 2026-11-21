@@ -1,24 +1,37 @@
 // Translucent surfaces over the wallpaper (--cznw-wallpaper, set in
 // styles/crazynewworld.scss). Ported from the admin custom CSS that
 // mastodon.crazynewworld.net used before this theme existed.
-//
+
 // Gotchas:
 // - CSS-module class names (`_comp_…`, `_feat_…`) are built from file paths
 //   (generateScopedName in vite.config.mts) and change when upstream moves
 //   a file. After merging upstream, check that they all still exist.
 // - CSS-module chunks load after this stylesheet, so a rule with the same
-//   specificity loses. Every override therefore starts with `html `.
+//   specificity loses: overrides of CSS-module classes start with `html `.
+//   Global classes are defined earlier in this same stylesheet and need no
+//   prefix.
 // - An element with backdrop-filter becomes a backdrop root: a blurred popout
 //   inside it only sees that element's own content. So never blur an
 //   ancestor of a popout (e.g. the column header root); blur a pseudo-element
 //   or a sibling instead.
 
+// A Sass variable, not a custom property: Safari's prefixed backdrop-filter
+// ignores var() (see $backdrop-blur-filter in mastodon/_variables.scss).
+$surface-filter: blur(10px) brightness(70%);
+
 @mixin surface-blur {
-  backdrop-filter: var(--cznw-surface-filter);
+  backdrop-filter: $surface-filter;
 }
 
-@mixin wallpaper($attachment: fixed) {
-  background: var(--cznw-wallpaper) no-repeat $attachment center top / cover;
+@mixin wallpaper {
+  background: var(--cznw-wallpaper) no-repeat fixed center top / cover;
+}
+
+// iOS (and iPadOS) Safari
+@mixin ios {
+  @supports (-webkit-touch-callout: none) {
+    @content;
+  }
 }
 
 // Tokens
@@ -28,7 +41,6 @@ html:not([data-color-scheme]) {
   --color-bg-primary: rgb(from var(--base-color-bg) r g b / 55%);
   --color-bg-desktop: transparent;
   --base-border-column-strength: 30%;
-  --cznw-surface-filter: blur(10px) brightness(70%);
 }
 
 // Wallpaper. `body.admin` (settings and admin pages) has its own background
@@ -37,24 +49,22 @@ html:not([data-color-scheme]) {
 body,
 body.admin {
   @include wallpaper;
-}
 
-// iOS ignores `background-attachment: fixed`, so the wallpaper goes on a fixed
-// pseudo-element instead. 100lvh keeps it covering the screen while the
-// browser bars collapse.
-@supports (-webkit-touch-callout: none) {
-  body,
-  body.admin {
+  // iOS ignores `background-attachment: fixed`, so the wallpaper goes on a
+  // fixed pseudo-element instead.
+  @include ios {
     background: none;
   }
+}
 
+@include ios {
   body::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100lvh;
+    height: 100lvh; // keeps covering the screen while the browser bars collapse
     z-index: -1;
     pointer-events: none;
     background: var(--cznw-wallpaper) no-repeat center / cover;
@@ -73,35 +83,31 @@ html .layout-multiple-columns ._comp_column__root {
 
 html ._comp_column_header__root {
   @include wallpaper;
+
+  @media (width <= 760px) {
+    background: transparent;
+  }
+
+  @include ios {
+    background: transparent;
+  }
+
+  // Clip the scrolled-down shadow and the new-post glow so they don't darken
+  // the wallpaper.
+  &::after {
+    background: transparent;
+    clip-path: inset(100% 0 -16px 0);
+  }
+
+  &::before {
+    clip-path: inset(50% 0 0 0);
+  }
 }
 
 html ._comp_column_header__layout {
   background: transparent;
 
   @include surface-blur;
-}
-
-@media (width <= 760px) {
-  html ._comp_column_header__root {
-    background: transparent;
-  }
-}
-
-@supports (-webkit-touch-callout: none) {
-  html ._comp_column_header__root {
-    background: transparent;
-  }
-}
-
-// Header decorations: clip the scrolled-down shadow and the new-post glow so
-// they don't darken the wallpaper.
-html ._comp_column_header__root::after {
-  background: transparent;
-  clip-path: inset(100% 0 -16px 0);
-}
-
-html ._comp_column_header__root::before {
-  clip-path: inset(50% 0 0 0);
 }
 
 // The strip below the title (the search box on the search results page).
@@ -143,44 +149,52 @@ html ._feat_navigation_panel_mobile_nav__floatingCard {
 }
 
 // Popouts, menus, modals and other surfaces that float over the wallpaper or
-// the timeline with a translucent --color-bg-primary background.
+// the timeline with a translucent --color-bg-primary background. Some of
+// them are already blurred upstream with $backdrop-blur-filter; listing them
+// here gives every surface the same filter.
 
 html ._feat_navigation_panel_mobile_nav__slideOut,
 html ._comp_menu__card,
-html .dropdown-menu,
-html .search__popout,
 html ._feat_compose__root,
 html ._feat_compose_trigger__composerMinimized,
 html ._comp_bottom_sheet__sheet,
 html ._comp_modal_shell_redesign__modal,
-html .safety-action-modal__top,
-html .safety-action-modal__bottom,
-html .compare-history-modal,
-html .report-dialog-modal,
-html .privacy-dropdown__dropdown,
-html .info-tooltip,
 html ._comp_account_header__handleHelp,
 html ._feat_account_timeline__filterOverlay,
 html ._comp_form_fields_combobox__listBoxWrapper,
-html ._comp_emoji_picker__modifiersMenu {
+html ._comp_emoji_picker__modifiersMenu,
+.dropdown-menu,
+.search__popout,
+.safety-action-modal__top,
+.safety-action-modal__bottom,
+.compare-history-modal,
+.report-dialog-modal,
+.privacy-dropdown__dropdown,
+.info-tooltip,
+.dialog-modal,
+.dialog-modal__popout,
+.actions-modal,
+.modal-placeholder,
+.hover-card,
+.interaction-modal {
   @include surface-blur;
 }
 
 // Settings and admin pages
 
-html .admin-wrapper .content-wrapper {
+.admin-wrapper .content-wrapper {
   background: transparent;
 }
 
-html .batch-table__toolbar,
-html .admin-wrapper .sidebar > nav > ul.visible {
+.batch-table__toolbar,
+.admin-wrapper .sidebar > nav > ul.visible {
   @include surface-blur;
 }
 
 // Sign-in and other auth pages, and the OAuth authorization pages: put the
 // form on a translucent panel.
 
-html .form-container {
+.form-container {
   box-sizing: border-box;
   padding: 32px;
   background: var(--color-bg-primary);
