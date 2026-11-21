@@ -78,6 +78,11 @@ html .layout-multiple-columns ._comp_column__root {
   background: transparent;
 }
 
+// The mascot area of the empty column in the multi-column layout
+.drawer__inner__mastodon {
+  background: transparent;
+}
+
 // Web UI: sticky column header. The root repeats the fixed wallpaper so the
 // header is opaque; the layout inside it is transparent and blurred.
 
