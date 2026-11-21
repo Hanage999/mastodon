@@ -191,6 +191,45 @@ html ._comp_emoji_picker__modifiersMenu,
   @include surface-blur;
 }
 
+// Chrome on macOS opens <select> menus as native OS menus (Liquid Glass on
+// macOS 26), unlike every other menu here. Where customizable select is
+// supported, the menu is drawn in the page and styled like the others; other
+// browsers keep their native menus. The closed select keeps upstream's look
+// (the chevron comes from the wrapper, so the built-in icon is hidden).
+@supports (appearance: base-select) {
+  .simple_form select,
+  .simple_form select::picker(select) {
+    appearance: base-select;
+  }
+
+  .simple_form select::picker-icon {
+    display: none;
+  }
+
+  .simple_form select::picker(select) {
+    margin-block: var(--space-1);
+    padding: var(--space-1);
+    color: var(--color-text-primary);
+    background: var(--color-bg-primary);
+    border: var(--border-column);
+    border-radius: var(--space-2);
+    box-shadow: var(--dropdown-shadow);
+
+    @include surface-blur;
+  }
+
+  .simple_form select option {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--space-1);
+
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      background: var(--color-bg-highlight);
+    }
+  }
+}
+
 // Sign-in and other auth pages, and the OAuth authorization pages: put the
 // form on a translucent panel.
 
